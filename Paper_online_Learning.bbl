@@ -19,6 +19,37 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{ahn2006utilizing}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4b58047c167d2e0aaefce34da674e135}{%
+           family={Ahn},
+           familyi={A\bibinitperiod},
+           given={Hyung\bibnamedelima Jun},
+           giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{4b58047c167d2e0aaefce34da674e135}
+      \strng{fullhash}{4b58047c167d2e0aaefce34da674e135}
+      \strng{bibnamehash}{4b58047c167d2e0aaefce34da674e135}
+      \strng{authorbibnamehash}{4b58047c167d2e0aaefce34da674e135}
+      \strng{authornamehash}{4b58047c167d2e0aaefce34da674e135}
+      \strng{authorfullhash}{4b58047c167d2e0aaefce34da674e135}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Electronic Commerce}
+      \field{number}{2}
+      \field{title}{Utilizing popularity characteristics for product recommendation}
+      \field{volume}{11}
+      \field{year}{2006}
+      \field{pages}{59\bibrangedash 80}
+      \range{pages}{22}
+    \endentry
     \entry{alicino2015assessing}{article}{}
       \name{author}{8}{}{%
         {{hash=a4fc7dc021077db1f3d39b11d2808d47}{%
@@ -300,6 +331,67 @@
       \field{year}{2011}
       \field{pages}{129\bibrangedash 135}
       \range{pages}{7}
+    \endentry
+    \entry{nuti2014use}{article}{}
+      \name{author}{7}{}{%
+        {{hash=bc5f5e2eeefe5a4ec3c8e159a478f18a}{%
+           family={Nuti},
+           familyi={N\bibinitperiod},
+           given={Sudhakar\bibnamedelima V},
+           giveni={S\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=3b72d1407b1c9eca38fac20e3d7e68bb}{%
+           family={Wayda},
+           familyi={W\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=8806ed73f75b5f381dbfae20c9c0bd8c}{%
+           family={Ranasinghe},
+           familyi={R\bibinitperiod},
+           given={Isuru},
+           giveni={I\bibinitperiod}}}%
+        {{hash=9aa8191d9bb6b7d4c6c33d6edc41af86}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Sisi},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f8e570006a55edb0c30c4cf8f7130b57}{%
+           family={Dreyer},
+           familyi={D\bibinitperiod},
+           given={Rachel\bibnamedelima P},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=c02a5576c2deddfc6f404eff4e3fa6c2}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Serene\bibnamedelima I},
+           giveni={S\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=1f60159cea8946c2a07bde6a3131134b}{%
+           family={Murugiah},
+           familyi={M\bibinitperiod},
+           given={Karthik},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Public Library of Science San Francisco, USA}%
+      }
+      \strng{namehash}{81ebcacb571cc5d7a954037bab89380d}
+      \strng{fullhash}{9a4ac576f7053f931260592adda56517}
+      \strng{bibnamehash}{9a4ac576f7053f931260592adda56517}
+      \strng{authorbibnamehash}{9a4ac576f7053f931260592adda56517}
+      \strng{authornamehash}{81ebcacb571cc5d7a954037bab89380d}
+      \strng{authorfullhash}{9a4ac576f7053f931260592adda56517}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PloS one}
+      \field{number}{10}
+      \field{title}{The use of google trends in health care research: a systematic review}
+      \field{volume}{9}
+      \field{year}{2014}
+      \field{pages}{e109583}
+      \range{pages}{-1}
     \endentry
     \entry{spector2014handbook}{book}{}
       \name{author}{4}{}{%

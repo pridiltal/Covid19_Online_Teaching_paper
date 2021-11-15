@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.9.16)  15 NOV 2021 15:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.9.16)  15 NOV 2021 20:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1130,19 +1130,39 @@ LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
 (Font)              scaled to size 9.85492pt on input line 274.
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
 (Font)              scaled to size 13.49991pt on input line 282.
-<figure/covidImpactWorld-1.png, id=34, 578.16pt x 289.08pt>
+<figure/covidImpactWorld-1.png, id=38, 578.16pt x 289.08pt>
 File: figure/covidImpactWorld-1.png Graphic file (type png)
 <use figure/covidImpactWorld-1.png>
 Package pdftex.def Info: figure/covidImpactWorld-1.png  used on input line 290.
 
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
 [2]
-<figure/covidImpactContinent-1.png, id=45, 578.16pt x 578.16pt>
+<figure/covidImpactContinent-1.png, id=49, 578.16pt x 433.62pt>
 File: figure/covidImpactContinent-1.png Graphic file (type png)
 <use figure/covidImpactContinent-1.png>
 Package pdftex.def Info: figure/covidImpactContinent-1.png  used on input line 
 299.
+(pdftex.def)             Requested size: 455.24411pt x 341.43124pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figure/distanceLearningWorldAnalysis-1.png, id=57, 578.16pt x 578.16pt>
+File: figure/distanceLearningWorldAnalysis-1.png Graphic file (type png)
+<use figure/distanceLearningWorldAnalysis-1.png>
+Package pdftex.def Info: figure/distanceLearningWorldAnalysis-1.png  used on in
+put line 313.
 (pdftex.def)             Requested size: 455.24411pt x 455.24165pt.
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.21904pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.21904pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
+
+LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 318.
+[3 <./figure/covidImpactWorld-1.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1154,24 +1174,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
 
-LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 309.
-[3 <./figure/covidImpactWorld-1.png>]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
 [4 <./figure/covidImpactContinent-1.png>]
-<figure/distanceLearningWorldAnalysis-1.png, id=76, 578.16pt x 433.62pt>
-File: figure/distanceLearningWorldAnalysis-1.png Graphic file (type png)
-<use figure/distanceLearningWorldAnalysis-1.png>
-Package pdftex.def Info: figure/distanceLearningWorldAnalysis-1.png  used on in
-put line 315.
-(pdftex.def)             Requested size: 455.24411pt x 341.43124pt.
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 25.21904pt, for example:
@@ -1208,13 +1211,13 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
 
 [8]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 37
-0.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 36
+7.
 (/Users/priyangatalagala/Library/TinyTeX/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 370.
+(Font)              scaled to size 9.85492pt on input line 367.
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 25.21904pt, for example:
@@ -1238,7 +1241,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [10] (./Paper_online_Learning.aux)
 Package rerunfilecheck Info: File `Paper_online_Learning.out' has not changed.
-(rerunfilecheck)             Checksum: 21C399EE3BBFA6E8A5D42BB278D50B33;464.
+(rerunfilecheck)             Checksum: 8931F23DF722D8FC303C10828DDA04C1;583.
 Package logreq Info: Writing requests to 'Paper_online_Learning.run.xml'.
 \openout1 = `Paper_online_Learning.run.xml'.
 
@@ -1248,13 +1251,13 @@ Package logreq Info: Writing requests to 'Paper_online_Learning.run.xml'.
 ### semi simple group (level 1) entered at line 166 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 22506 strings out of 480559
- 384401 string characters out of 5901695
- 1142829 words of memory out of 5000000
- 39485 multiletter control sequences out of 15000+600000
- 499147 words of font info for 280 fonts, out of 8000000 for 9000
+ 22531 strings out of 480559
+ 384809 string characters out of 5901695
+ 1144990 words of memory out of 5000000
+ 39494 multiletter control sequences out of 15000+600000
+ 499783 words of font info for 288 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,12n,67p,1577b,5389s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,67p,2036b,5389s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/enc/d
 vips/base/8r.enc}</Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type
 1/public/bera/fvmr8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fo
@@ -1263,10 +1266,10 @@ nts/type1/public/bera/fvsb8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf
 eX/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></Users/priyangatalagala/Libr
 ary/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></Users/priyangatala
 gala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Paper_online_Learning.pdf (11 pages, 288400 bytes).
+Output written on Paper_online_Learning.pdf (11 pages, 281866 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 81960 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 178 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 81968 words of extra memory for PDF output out of 89155 (max. 10000000)
 
