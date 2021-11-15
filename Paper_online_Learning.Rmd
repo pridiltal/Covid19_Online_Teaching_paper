@@ -1,0 +1,45 @@
+---
+title: "Attention Towards Distance Education Tools During COVID-19 Pandemic: Evidence from Google Trends"
+author:
+- familyname: Talagala 
+  othernames: Priyanga Dilini
+  address: Department of Compuational Mathematics, University of Moratuwa, Sri Lanka
+  email: priyangad@uom.lk
+  correspondingauthor: true
+- familyname: Talagala
+  othernames: Thiyanga
+  address: Department of Statistics, University of Sri Jayewardenepura, Sri Lanka
+  email: tstalagala@gmail.com
+abstract: "A brief summary of our work"
+keywords: "rmarkdown, templates"
+wpnumber: 1
+jelcodes: C10,C14,C22
+blind: false
+cover: true
+toc: false
+bibliography: references.bib
+biblio-style: authoryear-comp
+output:
+  templatehub::workingpaper:
+    fig_caption: yes
+    fig_height: 10
+    fig_width: 8
+    includes:
+      in_header: preamble.tex
+    keep_tex: yes
+    number_sections: yes
+    citation_package: biblatex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, cache=FALSE, messages=FALSE, warning=FALSE)
+# Make sure you have the latest version of rmarkdown and bookdown
+#devtools::install_github("rstudio/rmarkdown")
+#devtools::install_github("rstudio/bookdown")
+library(ggplot2)
+```
+
+
+```{r main, child='main.Rmd'}
+```
+
