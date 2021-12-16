@@ -50,6 +50,113 @@
       \field{pages}{59\bibrangedash 80}
       \range{pages}{22}
     \endentry
+    \entry{alicino2015assessing}{article}{}
+      \name{author}{8}{}{%
+        {{hash=a4fc7dc021077db1f3d39b11d2808d47}{%
+           family={Alicino},
+           familyi={A\bibinitperiod},
+           given={Cristiano},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e96497aa5f58540e74cc826243e35967}{%
+           family={Bragazzi},
+           familyi={B\bibinitperiod},
+           given={Nicola\bibnamedelima Luigi},
+           giveni={N\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=ca18f692817b0603820fb167e0c04bbb}{%
+           family={Faccio},
+           familyi={F\bibinitperiod},
+           given={Valeria},
+           giveni={V\bibinitperiod}}}%
+        {{hash=31a89c73eaff67db6b435dafe9f2b65d}{%
+           family={Amicizia},
+           familyi={A\bibinitperiod},
+           given={Daniela},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8d3457f4be200b74a0934e4f325e283d}{%
+           family={Panatto},
+           familyi={P\bibinitperiod},
+           given={Donatella},
+           giveni={D\bibinitperiod}}}%
+        {{hash=73677299ed62390ab44cdbbf7fe607f5}{%
+           family={Gasparini},
+           familyi={G\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod}}}%
+        {{hash=46edd909c9e8099672c93d52df399081}{%
+           family={Icardi},
+           familyi={I\bibinitperiod},
+           given={Giancarlo},
+           giveni={G\bibinitperiod}}}%
+        {{hash=fb224b2c14b07b46675ff54a65a4238f}{%
+           family={Orsi},
+           familyi={O\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {BioMed Central}%
+      }
+      \strng{namehash}{24477e077b9fafd0730d36d65a892915}
+      \strng{fullhash}{f117dd21336ee13392e4f5ef0ad66d37}
+      \strng{bibnamehash}{f117dd21336ee13392e4f5ef0ad66d37}
+      \strng{authorbibnamehash}{f117dd21336ee13392e4f5ef0ad66d37}
+      \strng{authornamehash}{24477e077b9fafd0730d36d65a892915}
+      \strng{authorfullhash}{f117dd21336ee13392e4f5ef0ad66d37}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Infectious diseases of poverty}
+      \field{number}{1}
+      \field{title}{Assessing Ebola-related web search behaviour: insights and implications from an analytical study of Google Trends-based query volumes}
+      \field{volume}{4}
+      \field{year}{2015}
+      \field{pages}{54}
+      \range{pages}{1}
+    \endentry
+    \entry{arora2019google}{article}{}
+      \name{author}{3}{}{%
+        {{hash=2607c2f02da7eb3f1f298d34dfbfafb1}{%
+           family={Arora},
+           familyi={A\bibinitperiod},
+           given={Vishal\bibnamedelima S},
+           giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=e843a69d4b2a7f7def3e59e04f07bdaa}{%
+           family={McKee},
+           familyi={M\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8015572dff80023773b2d1a270b29ff5}{%
+           family={Stuckler},
+           familyi={S\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{2049e856ebeb770625040c2d7333fb8b}
+      \strng{fullhash}{2049e856ebeb770625040c2d7333fb8b}
+      \strng{bibnamehash}{2049e856ebeb770625040c2d7333fb8b}
+      \strng{authorbibnamehash}{2049e856ebeb770625040c2d7333fb8b}
+      \strng{authornamehash}{2049e856ebeb770625040c2d7333fb8b}
+      \strng{authorfullhash}{2049e856ebeb770625040c2d7333fb8b}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Health Policy}
+      \field{number}{3}
+      \field{title}{Google Trends: Opportunities and limitations in health and health policy research}
+      \field{volume}{123}
+      \field{year}{2019}
+      \field{pages}{338\bibrangedash 341}
+      \range{pages}{4}
+    \endentry
     \entry{chang2020modelling}{article}{}
       \name{author}{5}{}{%
         {{hash=88bbaf6e06b4943f6284e6a89b941fe0}{%
@@ -93,6 +200,42 @@
       \field{journaltitle}{arXiv preprint arXiv:2003.10218}
       \field{title}{Modelling transmission and control of the COVID-19 pandemic in Australia}
       \field{year}{2020}
+    \endentry
+    \entry{chumnumpan2019understanding}{article}{}
+      \name{author}{2}{}{%
+        {{hash=af6939b0a688b2480b18ae7a351093a7}{%
+           family={Chumnumpan},
+           familyi={C\bibinitperiod},
+           given={Pattarin},
+           giveni={P\bibinitperiod}}}%
+        {{hash=765b648c9f960e7d2043b86a9ff5f414}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Xiaohui},
+           giveni={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{0bccada0e567c4c81b1e836246357a38}
+      \strng{fullhash}{0bccada0e567c4c81b1e836246357a38}
+      \strng{bibnamehash}{0bccada0e567c4c81b1e836246357a38}
+      \strng{authorbibnamehash}{0bccada0e567c4c81b1e836246357a38}
+      \strng{authornamehash}{0bccada0e567c4c81b1e836246357a38}
+      \strng{authorfullhash}{0bccada0e567c4c81b1e836246357a38}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Australasian Marketing Journal (AMJ)}
+      \field{number}{2}
+      \field{title}{Understanding new products’ market performance using Google Trends}
+      \field{volume}{27}
+      \field{year}{2019}
+      \field{pages}{91\bibrangedash 103}
+      \range{pages}{13}
     \endentry
     \entry{daniel2020education}{article}{}
       \name{author}{1}{}{%
@@ -192,6 +335,190 @@
       \field{labeltitlesource}{title}
       \field{title}{The impact of ‘learning at home’on the educational outcomes of vulnerable children in Australia during the COVID-19 pandemic}
       \field{year}{2020}
+    \endentry
+    \entry{effenberger2020association}{article}{}
+      \name{author}{6}{}{%
+        {{hash=e25d5383d468e52e5be48f093e512fd6}{%
+           family={Effenberger},
+           familyi={E\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod}}}%
+        {{hash=dde6a716f11f317827b83f2525acbadd}{%
+           family={Kronbichler},
+           familyi={K\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=29c7a10871d105405c8dfb4ac156d3e2}{%
+           family={Shin},
+           familyi={S\bibinitperiod},
+           given={Jae\bibnamedelima Il},
+           giveni={J\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=303c68414e370d2420625c55db65e316}{%
+           family={Mayer},
+           familyi={M\bibinitperiod},
+           given={Gert},
+           giveni={G\bibinitperiod}}}%
+        {{hash=46726312b68d0dcb64c4080640af508f}{%
+           family={Tilg},
+           familyi={T\bibinitperiod},
+           given={Herbert},
+           giveni={H\bibinitperiod}}}%
+        {{hash=7159d5a5d9a280cdea3f9a39d9ea825e}{%
+           family={Perco},
+           familyi={P\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{22bb78f342aeb927d51af43c27c71bc5}
+      \strng{fullhash}{3e6681984d7d025aaca294616469f0d7}
+      \strng{bibnamehash}{3e6681984d7d025aaca294616469f0d7}
+      \strng{authorbibnamehash}{3e6681984d7d025aaca294616469f0d7}
+      \strng{authornamehash}{22bb78f342aeb927d51af43c27c71bc5}
+      \strng{authorfullhash}{3e6681984d7d025aaca294616469f0d7}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Infectious Diseases}
+      \field{title}{Association of the COVID-19 pandemic with internet search volumes: a Google TrendsTM analysis}
+      \field{volume}{95}
+      \field{year}{2020}
+      \field{pages}{192\bibrangedash 197}
+      \range{pages}{6}
+    \endentry
+    \entry{husnayain2020applications}{article}{}
+      \name{author}{3}{}{%
+        {{hash=782bc5e7e5598a4b5305774686297932}{%
+           family={Husnayain},
+           familyi={H\bibinitperiod},
+           given={Atina},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4453749bdb0eabf8a9c80ae0dd7ff145}{%
+           family={Fuad},
+           familyi={F\bibinitperiod},
+           given={Anis},
+           giveni={A\bibinitperiod}}}%
+        {{hash=de29671aea7af4f09afa2fae402249a6}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Emily\bibnamedelima Chia-Yu},
+           giveni={E\bibinitperiod\bibinitdelim C\bibinithyphendelim Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{817742ed43091e3ae37594653b65d6fe}
+      \strng{fullhash}{817742ed43091e3ae37594653b65d6fe}
+      \strng{bibnamehash}{817742ed43091e3ae37594653b65d6fe}
+      \strng{authorbibnamehash}{817742ed43091e3ae37594653b65d6fe}
+      \strng{authornamehash}{817742ed43091e3ae37594653b65d6fe}
+      \strng{authorfullhash}{817742ed43091e3ae37594653b65d6fe}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Infectious Diseases}
+      \field{title}{Applications of Google Search Trends for risk communication in infectious disease management: A case study of the COVID-19 outbreak in Taiwan}
+      \field{volume}{95}
+      \field{year}{2020}
+      \field{pages}{221\bibrangedash 223}
+      \range{pages}{3}
+    \endentry
+    \entry{kam2019monitoring}{article}{}
+      \name{author}{3}{}{%
+        {{hash=80252a206ffc2f57de011867f1ffbb6b}{%
+           family={Kam},
+           familyi={K\bibinitperiod},
+           given={Jonghun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c86581d034efb765249538bc77a17814}{%
+           family={Stowers},
+           familyi={S\bibinitperiod},
+           given={Kimberly},
+           giveni={K\bibinitperiod}}}%
+        {{hash=62ff005d01d193f4e2282c9d02e25b9e}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Sungyoon},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d56f8c6104bca2b6e85f245732e9ca9f}
+      \strng{fullhash}{d56f8c6104bca2b6e85f245732e9ca9f}
+      \strng{bibnamehash}{d56f8c6104bca2b6e85f245732e9ca9f}
+      \strng{authorbibnamehash}{d56f8c6104bca2b6e85f245732e9ca9f}
+      \strng{authornamehash}{d56f8c6104bca2b6e85f245732e9ca9f}
+      \strng{authorfullhash}{d56f8c6104bca2b6e85f245732e9ca9f}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Weather, Climate, and Society}
+      \field{number}{2}
+      \field{title}{Monitoring of drought awareness from google trends: a case study of the 2011--17 California drought}
+      \field{volume}{11}
+      \field{year}{2019}
+      \field{pages}{419\bibrangedash 429}
+      \range{pages}{11}
+    \endentry
+    \entry{kansal2021google}{article}{}
+      \name{author}{5}{}{%
+        {{hash=bf08b630ae1c667b86d2b59ce1fdecc4}{%
+           family={Kansal},
+           familyi={K\bibinitperiod},
+           given={Ashwani\bibnamedelima Kumar},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=a9ed4d607d01e44cb195a406721a2baf}{%
+           family={Gautam},
+           familyi={G\bibinitperiod},
+           given={Jyoti},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fab382fd18b3071bb8da141febef4e76}{%
+           family={Chintalapudi},
+           familyi={C\bibinitperiod},
+           given={Nalini},
+           giveni={N\bibinitperiod}}}%
+        {{hash=e432f940658d426da330956997bf3ed6}{%
+           family={Jain},
+           familyi={J\bibinitperiod},
+           given={Shivani},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4bd4ecc4d7738f8c5b4bb8c498da46a9}{%
+           family={Battineni},
+           familyi={B\bibinitperiod},
+           given={Gopi},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Multidisciplinary Digital Publishing Institute}%
+      }
+      \strng{namehash}{6eba731e6c9cc293cb4166a89dd9c63e}
+      \strng{fullhash}{74ac3153b7671efe9e3ee542ce9b070b}
+      \strng{bibnamehash}{74ac3153b7671efe9e3ee542ce9b070b}
+      \strng{authorbibnamehash}{74ac3153b7671efe9e3ee542ce9b070b}
+      \strng{authornamehash}{6eba731e6c9cc293cb4166a89dd9c63e}
+      \strng{authorfullhash}{74ac3153b7671efe9e3ee542ce9b070b}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Infectious Disease Reports}
+      \field{number}{2}
+      \field{title}{Google Trend Analysis and Paradigm Shift of Online Education Platforms during the COVID-19 Pandemic}
+      \field{volume}{13}
+      \field{year}{2021}
+      \field{pages}{418\bibrangedash 428}
+      \range{pages}{11}
     \endentry
     \entry{moore2011learning}{article}{}
       \name{author}{3}{}{%
@@ -363,6 +690,42 @@
       \verb{url}
       \verb https://en.unesco.org/covid19/educationresponse/consequences
       \endverb
+    \endentry
+    \entry{vaughan2014web}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d030a5eacf7aaa775d6eaeb936ee9e78}{%
+           family={Vaughan},
+           familyi={V\bibinitperiod},
+           given={Liwen},
+           giveni={L\bibinitperiod}}}%
+        {{hash=eed3bbd8a81a2972b4a3314c40b2fe35}{%
+           family={Romero-Frias},
+           familyi={R\bibinithyphendelim F\bibinitperiod},
+           given={Esteban},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{fca4a1e7486030157fbefa2de8348b02}
+      \strng{fullhash}{fca4a1e7486030157fbefa2de8348b02}
+      \strng{bibnamehash}{fca4a1e7486030157fbefa2de8348b02}
+      \strng{authorbibnamehash}{fca4a1e7486030157fbefa2de8348b02}
+      \strng{authornamehash}{fca4a1e7486030157fbefa2de8348b02}
+      \strng{authorfullhash}{fca4a1e7486030157fbefa2de8348b02}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Association for Information Science and Technology}
+      \field{number}{4}
+      \field{title}{Web search volume as a predictor of academic fame: An exploration of Google trends}
+      \field{volume}{65}
+      \field{year}{2014}
+      \field{pages}{707\bibrangedash 720}
+      \range{pages}{14}
     \endentry
     \entry{willis2020using}{article}{}
       \name{author}{2}{}{%

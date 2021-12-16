@@ -62,7 +62,8 @@ In response to this gray situation and urgent requirement of massive transformat
 According to @ahn2006utilizing, the popularity of a product greatly influences consumer purchasing decisions.  It can also indicate the prominence of the product in the market, its usability and its impact.  Further, according to @willis2020using, developers also tend to improve their products and services in response to increasing online search. Therefore, the internet represents a great opportunity to learn about public attention towards a product or service.  It is also a way to narrow down the search space and  thereby identify most suitable product and services that meets customer needs.
 
 Google Trends is an open source web analytics tool that allows users to interact with Internet search data, which can provide deep insights into population behavior [@nuti2014use]. In this study we test whether the Google Analytics search index series can be used as a proxy of the popularity and the public interest in different distance education solutions. In line with that, this paper makes three fundamental contributions to distance education by exploring three main questions: (1) What is the impact of  COVID 19 pandemic on education? (2) What solutions are in place to meet the need of distance education in terms during COVID 19 pandemic? (3) Which distance learning solutions have a wide attention and public interest during the COVID-19 pandemic? 
-We primarily analyze quantitative digital footprint data on the internet from December 2019 to August 2021. The resulted google trend footprint provides a fast first step to identify the most popular distance education tools available for different education purposes. It  also allows the teachers to narrow down the search space and  deepen their exploration on  prominent distance education solutions to support their online teaching.
+We primarily analyze quantitative digital footprint data on the internet from December 2019 to August 2021. The resulted google trend footprint provides a fast first step to identify the most popular distance education tools available for different education purposes. It  also allows the teachers to narrow down the search space and  deepen their exploration on  prominent distance education solutions to support their online teaching. Further, identifying most popular tools and techniques will allow everyone to focus on those methods and develop a sustainable learning environment by advancing the existing features.  
+
 
 Quality education is essential to sustainable development and it is a key  United Nations (UN) sustainable development goal. Having the right tool is imperative to successful completion of a task at hand. The findings of this study provides an initial guidance to select a right tool. Therefore, the findings of this study directly contribute to UN's sustainable development goals of quality education.
 
@@ -70,6 +71,25 @@ The remainder of this paper is organized as follows. Section 2 presents the rela
 
 
 ## Background
+
+Google Trends, is a website sponsored by Google that analyzes spatio and temporal patterns of search queries in Google Search, the largest search engine in the world, across various regions, subject domains and languages. Therefore, Google trends provide a quantifiable and valuable measure of emerging public concerns and trending topics together with their geographic distribution  [@alicino2015assessing].
+
+
+The use of google trend search queries has become a popular data source in monitoring and modeling the dynamics of different domains such as disaster management [@kam2019monitoring], transportation [@willis2020using], business [@chumnumpan2019understanding] and health care [@nuti2014use; @alicino2015assessing; @arora2019google]. According to the study conducted by @willis2020using on taxi preferences found that online quires can provide a proxy of quality of taxi services and thereby provide a means to investigate service quality and public concerns on the service provided.  Several recent studies have also been conducted  to investigate the relation between Google search trend patterns and the COVID-19 related concerns [@husnayain2020applications; @effenberger2020association]. The study conducted by @husnayain2020applications focuses on search terms related to the coronavirus, handwashing, and face masks  to monitor public restlessness toward COVID-19.  However, there are only a limited number of research attempts related to education section  using Google trend search query data [@vaughan2014web]. The study conducted by @vaughan2014web have used  google trend search queries to predict academic fame by testing the correlation between search volume data and university ranking data. @kansal2021google have used a text mining approach to identify emerging patterns of words and phrases during COVID-19 pandemic, keeping education prospects as the focus. However, their study was limited to a small number of  learning platforms. However, according to @moore2011learning the design of different types of learning environments can depend on the learning objective, target audience, access (physical, virtual and/or both), and type of content. Therefore, this study    provides a detailed investigation on distance  education solutions focusing on  distance learning needs.
+
+Eventhough google trend search quiries provide massive amount of data, more care should be given when utilizing it as a research tool. According to @nuti2014use the data retrieval process should be transparent. This will increase the trustworthiness of both the results and the generalizability of the findings. Furthermore, researchers should  clearly document the rationale and data retrieval process to ensure the reproducibility of results [@nuti2014use].
+
+## Methodology
+
+We visualise our data and we then employ time series modelling to capture
+
+
+
+### Impact of covid 19 on education
+
+In response to school closures, UNESCO recommended the use of distance learning programmes and open educational applications and platforms that schools and teachers can use to reach learners remotely and limit the disruption of education.  
+
+
 
 ## Analysis
 
