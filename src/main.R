@@ -203,7 +203,9 @@ p1 <- covidcasesW1 %>%  autoplot() +
   scale_color_brewer(palette="Dark2") +
   scale_x_date(limits = as.Date(c('2017-12-03','2021-08-08'))) +
   theme_bw()+
-  theme(legend.position = "bottom", text = element_text(size = 14))
+  theme(legend.position = "bottom", text = element_text(size = 14)) +
+  ggtitle("(a)")+
+  xlab("")
 
 
 # covid vaccine cases
@@ -252,7 +254,9 @@ p3<- dataW %>%  ggplot(aes(x=date, y=hits, colour = keyword))+
   scale_x_date(limits = as.Date(c('2017-12-03','2021-08-08'))) +
   theme_bw()+
   theme(legend.position = "bottom",
-        text = element_text(size = 14))
+        text = element_text(size = 14)) +
+  ggtitle("(b)")+
+  xlab("")
 
 
 ## Covid vacicne search trend
@@ -308,7 +312,8 @@ p5<- dataW%>% ggplot(aes(x=date, y=hits, colour = keyword))+
   theme_bw()+
   theme(legend.position = "bottom",
         text = element_text(size = 14))+
-  guides(colour = guide_legend(nrow = 2, title="keywords"))
+  guides(colour = guide_legend(nrow = 2, title="keywords"))+
+  ggtitle("(c)")
 
 p <- p1/p3/p5
 

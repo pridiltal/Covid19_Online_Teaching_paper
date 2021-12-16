@@ -7,7 +7,7 @@ author:
   email: priyangad@uom.lk
   correspondingauthor: true
 - familyname: Talagala
-  othernames: Thiyanga
+  othernames: Thiyanga S.
   address: Department of Statistics, University of Sri Jayewardenepura, Sri Lanka
   email: tstalagala@gmail.com
 abstract: "A brief summary of our work"

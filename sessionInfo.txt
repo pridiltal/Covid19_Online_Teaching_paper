@@ -13,16 +13,16 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] knitr_1.33    ggplot2_3.3.5
+[1] knitr_1.36    ggplot2_3.3.5
 
 loaded via a namespace (and not attached):
- [1] magrittr_2.0.1    tidyselect_1.1.1  munsell_0.5.0     colorspace_2.0-2 
- [5] R6_2.5.1          rlang_0.4.12      fansi_0.5.0       dplyr_1.0.7      
- [9] stringr_1.4.0     tools_4.1.0       grid_4.1.0        gtable_0.3.0     
-[13] xfun_0.24         utf8_1.2.2        DBI_1.1.1         withr_2.4.2      
-[17] htmltools_0.5.1.1 ellipsis_0.3.2    assertthat_0.2.1  yaml_2.2.1       
-[21] digest_0.6.27     tibble_3.1.5      lifecycle_1.0.1   crayon_1.4.2     
-[25] bookdown_0.22     purrr_0.3.4       vctrs_0.3.8       glue_1.5.0       
-[29] evaluate_0.14     rmarkdown_2.10    stringi_1.7.5     templatehub_0.1.0
-[33] compiler_4.1.0    pillar_1.6.4      generics_0.1.1    scales_1.1.1     
-[37] pkgconfig_2.0.3  
+ [1] pillar_1.6.4      compiler_4.1.0    tools_4.1.0       digest_0.6.28    
+ [5] evaluate_0.14     lifecycle_1.0.1   tibble_3.1.6      gtable_0.3.0     
+ [9] pkgconfig_2.0.3   rlang_0.4.12      DBI_1.1.1         yaml_2.2.1       
+[13] xfun_0.28         fastmap_1.1.0     withr_2.4.2       stringr_1.4.0    
+[17] dplyr_1.0.7       generics_0.1.1    vctrs_0.3.8       grid_4.1.0       
+[21] tidyselect_1.1.1  glue_1.5.1        R6_2.5.1          fansi_0.5.0      
+[25] rmarkdown_2.11    bookdown_0.24     templatehub_0.1.0 purrr_0.3.4      
+[29] magrittr_2.0.1    scales_1.1.1      ellipsis_0.3.2    htmltools_0.5.2  
+[33] assertthat_0.2.1  colorspace_2.0-2  utf8_1.2.2        stringi_1.7.6    
+[37] munsell_0.5.0     crayon_1.4.2     
