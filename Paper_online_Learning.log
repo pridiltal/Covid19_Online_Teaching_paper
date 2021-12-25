@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.12.16)  16 DEC 2021 19:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.12.16)  25 DEC 2021 14:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1013,12 +1013,36 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
 
 [8]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 356.
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.21904pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.21904pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
+
+[9]
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.21904pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.21904pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
+
+[10]
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.21904pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.21904pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
+
+[11]
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 381.
 (/Users/priyangatalagala/Library/TinyTeX/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 356.
+(Font)              scaled to size 9.85492pt on input line 381.
 
 Package caption Warning: Unused \captionsetup[table] on input line 62.
 See the caption package documentation for explanation.
@@ -1030,9 +1054,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
 
-[9] (./Paper_online_Learning.aux)
+[12] (./Paper_online_Learning.aux)
 Package rerunfilecheck Info: File `Paper_online_Learning.out' has not changed.
-(rerunfilecheck)             Checksum: 88C90AB0222B2E2C5C352B6533056AD1;976.
+(rerunfilecheck)             Checksum: 81BEE7A0C3E046756DD3B269947C563F;768.
 Package logreq Info: Writing requests to 'Paper_online_Learning.run.xml'.
 \openout1 = `Paper_online_Learning.run.xml'.
 
@@ -1042,18 +1066,18 @@ Package logreq Info: Writing requests to 'Paper_online_Learning.run.xml'.
 ### semi simple group (level 1) entered at line 166 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 23423 strings out of 480313
- 415710 string characters out of 5895694
- 1145899 words of memory out of 5000000
- 40643 multiletter control sequences out of 15000+600000
- 498909 words of font info for 277 fonts, out of 8000000 for 9000
+ 23511 strings out of 480313
+ 417267 string characters out of 5895694
+ 1147557 words of memory out of 5000000
+ 40693 multiletter control sequences out of 15000+600000
+ 500332 words of font info for 295 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,12n,63p,2062b,5580s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,63p,2652b,5596s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/bera/fvsb8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/bera/fvsr8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Paper_online_Learning.pdf (10 pages, 275046 bytes).
+Output written on Paper_online_Learning.pdf (13 pages, 287222 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
+ 247 PDF objects out of 1000 (max. 8388607)
+ 211 compressed objects within 3 object streams
+ 56 named destinations out of 1000 (max. 500000)
  81984 words of extra memory for PDF output out of 89155 (max. 10000000)
 

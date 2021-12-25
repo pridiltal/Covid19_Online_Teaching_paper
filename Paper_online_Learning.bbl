@@ -157,6 +157,83 @@
       \field{pages}{338\bibrangedash 341}
       \range{pages}{4}
     \endentry
+    \entry{carneiro2009google}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1634969bfb9cd944bb776582313011b5}{%
+           family={Carneiro},
+           familyi={C\bibinitperiod},
+           given={Herman\bibnamedelima Anthony},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=6709e771801b241ec8989d22c03f8a96}{%
+           family={Mylonakis},
+           familyi={M\bibinitperiod},
+           given={Eleftherios},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The University of Chicago Press}%
+      }
+      \strng{namehash}{23a57e7957a1f938e8669abbfe8dec2f}
+      \strng{fullhash}{23a57e7957a1f938e8669abbfe8dec2f}
+      \strng{bibnamehash}{23a57e7957a1f938e8669abbfe8dec2f}
+      \strng{authorbibnamehash}{23a57e7957a1f938e8669abbfe8dec2f}
+      \strng{authornamehash}{23a57e7957a1f938e8669abbfe8dec2f}
+      \strng{authorfullhash}{23a57e7957a1f938e8669abbfe8dec2f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Clinical infectious diseases}
+      \field{number}{10}
+      \field{title}{Google trends: a web-based tool for real-time surveillance of disease outbreaks}
+      \field{volume}{49}
+      \field{year}{2009}
+      \field{pages}{1557\bibrangedash 1564}
+      \range{pages}{8}
+    \endentry
+    \entry{carter2021teacher}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=aa96fc4cfcc3a9a3cb7355eb498c3f47}{%
+           family={Carter\bibnamedelima Andrews},
+           familyi={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Dorinda\bibnamedelima J},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=74db38b5ef638a1f68feae19e4788ac1}{%
+           family={Richmond},
+           familyi={R\bibinitperiod},
+           given={Gail},
+           giveni={G\bibinitperiod}}}%
+        {{hash=f0a056c603264f64338d46331dedc8fe}{%
+           family={Marciano},
+           familyi={M\bibinitperiod},
+           given={Joanne\bibnamedelima E},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SAGE Publications Sage CA: Los Angeles, CA}%
+      }
+      \strng{namehash}{0ef6562cea8fd50f692ed3138ac23b54}
+      \strng{fullhash}{0ef6562cea8fd50f692ed3138ac23b54}
+      \strng{bibnamehash}{0ef6562cea8fd50f692ed3138ac23b54}
+      \strng{authorbibnamehash}{0ef6562cea8fd50f692ed3138ac23b54}
+      \strng{authornamehash}{0ef6562cea8fd50f692ed3138ac23b54}
+      \strng{authorfullhash}{0ef6562cea8fd50f692ed3138ac23b54}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Teacher Education}
+      \field{number}{3}
+      \field{title}{The Teacher Support Imperative: Teacher Education and the Pedagogy of Connection}
+      \field{volume}{72}
+      \field{year}{2021}
+      \field{pages}{267\bibrangedash 270}
+      \range{pages}{4}
+    \endentry
     \entry{chang2020modelling}{article}{}
       \name{author}{5}{}{%
         {{hash=88bbaf6e06b4943f6284e6a89b941fe0}{%
@@ -236,6 +313,50 @@
       \field{year}{2019}
       \field{pages}{91\bibrangedash 103}
       \range{pages}{13}
+    \endentry
+    \entry{cook2011assessing}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f2f43efa05096c10b2669ccd9dbaf5b0}{%
+           family={Cook},
+           familyi={C\bibinitperiod},
+           given={Samantha},
+           giveni={S\bibinitperiod}}}%
+        {{hash=70e17d157c5f1deaeb3223b7ba1be979}{%
+           family={Conrad},
+           familyi={C\bibinitperiod},
+           given={Corrie},
+           giveni={C\bibinitperiod}}}%
+        {{hash=b04fab0b050cc98924598b933d8f26cb}{%
+           family={Fowlkes},
+           familyi={F\bibinitperiod},
+           given={Ashley\bibnamedelima L},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=320f4393bbd62cba7f374cf6dba80371}{%
+           family={Mohebbi},
+           familyi={M\bibinitperiod},
+           given={Matthew\bibnamedelima H},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Public Library of Science}%
+      }
+      \strng{namehash}{63bcbf035ab1dbcd2d40681ceb3c795b}
+      \strng{fullhash}{a5c84ea4da04b6198fd45a9729befe6f}
+      \strng{bibnamehash}{a5c84ea4da04b6198fd45a9729befe6f}
+      \strng{authorbibnamehash}{a5c84ea4da04b6198fd45a9729befe6f}
+      \strng{authornamehash}{63bcbf035ab1dbcd2d40681ceb3c795b}
+      \strng{authorfullhash}{a5c84ea4da04b6198fd45a9729befe6f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PloS one}
+      \field{number}{8}
+      \field{title}{Assessing Google flu trends performance in the United States during the 2009 influenza virus A (H1N1) pandemic}
+      \field{volume}{6}
+      \field{year}{2011}
     \endentry
     \entry{daniel2020education}{article}{}
       \name{author}{1}{}{%
@@ -431,6 +552,40 @@
       \field{pages}{221\bibrangedash 223}
       \range{pages}{3}
     \endentry
+    \entry{jarynowski2020perception}{article}{}
+      \name{author}{3}{}{%
+        {{hash=83fc16080eefc0fc770f8dc8ee435a44}{%
+           family={Jarynowski},
+           familyi={J\bibinitperiod},
+           given={Andrzej},
+           giveni={A\bibinitperiod}}}%
+        {{hash=443be39cdca63654b7a05499c8c0e875}{%
+           family={Wojta-Kempa},
+           familyi={W\bibinithyphendelim K\bibinitperiod},
+           given={Monika},
+           giveni={M\bibinitperiod}}}%
+        {{hash=533019460801dcbc4db76ecf0e68b6ae}{%
+           family={Belik},
+           familyi={B\bibinitperiod},
+           given={Vitaly},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{6fa8b17bbeb653f4df8662887db0cafd}
+      \strng{fullhash}{6fa8b17bbeb653f4df8662887db0cafd}
+      \strng{bibnamehash}{6fa8b17bbeb653f4df8662887db0cafd}
+      \strng{authorbibnamehash}{6fa8b17bbeb653f4df8662887db0cafd}
+      \strng{authornamehash}{6fa8b17bbeb653f4df8662887db0cafd}
+      \strng{authorfullhash}{6fa8b17bbeb653f4df8662887db0cafd}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Available at SSRN 3572662}
+      \field{title}{Perception of emergent epidemic of COVID-2019/SARS CoV-2 on the Polish Internet}
+      \field{year}{2020}
+    \endentry
     \entry{kam2019monitoring}{article}{}
       \name{author}{3}{}{%
         {{hash=80252a206ffc2f57de011867f1ffbb6b}{%
@@ -622,6 +777,57 @@
       \field{pages}{e109583}
       \range{pages}{-1}
     \endentry
+    \entry{richmond2020critical}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=74db38b5ef638a1f68feae19e4788ac1}{%
+           family={Richmond},
+           familyi={R\bibinitperiod},
+           given={Gail},
+           giveni={G\bibinitperiod}}}%
+        {{hash=829f770b17f317d25426c779f2e83457}{%
+           family={Cho},
+           familyi={C\bibinitperiod},
+           given={Christine},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9c4f9cb40ddf6eafdd176dd067fbda18}{%
+           family={Gallagher},
+           familyi={G\bibinitperiod},
+           given={H\bibnamedelima Alix},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=20bc9ad639f38f61c6d07792a9ae5418}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Ye},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=7a5f37cafd7da2428f3996f2c7b47e27}{%
+           family={Petchauer},
+           familyi={P\bibinitperiod},
+           given={Emery},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SAGE Publications Sage CA: Los Angeles, CA}%
+      }
+      \strng{namehash}{3f2924fbec8e105e5a0941fe3b444907}
+      \strng{fullhash}{a4ec5ee87f2922cd7e1b25ca64ab053a}
+      \strng{bibnamehash}{a4ec5ee87f2922cd7e1b25ca64ab053a}
+      \strng{authorbibnamehash}{a4ec5ee87f2922cd7e1b25ca64ab053a}
+      \strng{authornamehash}{3f2924fbec8e105e5a0941fe3b444907}
+      \strng{authorfullhash}{a4ec5ee87f2922cd7e1b25ca64ab053a}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Teacher Education}
+      \field{number}{4}
+      \field{title}{The critical need for pause in the COVID-19 era}
+      \field{volume}{71}
+      \field{year}{2020}
+      \field{pages}{375\bibrangedash 378}
+      \range{pages}{4}
+    \endentry
     \entry{spector2014handbook}{book}{}
       \name{author}{4}{}{%
         {{hash=527fff148a8ed16e48526ec480563514}{%
@@ -675,8 +881,10 @@
       \strng{authorbibnamehash}{24a0ef0a6269be289db4de9570763de3}
       \strng{authornamehash}{24a0ef0a6269be289db4de9570763de3}
       \strng{authorfullhash}{24a0ef0a6269be289db4de9570763de3}
+      \field{extraname}{1}
       \field{sortinit}{U}
       \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradate}{1}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
@@ -689,6 +897,66 @@
       \endverb
       \verb{url}
       \verb https://en.unesco.org/covid19/educationresponse/consequences
+      \endverb
+    \endentry
+    \entry{unesco2020covid}{article}{}
+      \name{author}{1}{}{%
+        {{hash=24a0ef0a6269be289db4de9570763de3}{%
+           family={UNESCO},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{fullhash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{bibnamehash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{authorbibnamehash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{authornamehash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{authorfullhash}{24a0ef0a6269be289db4de9570763de3}
+      \field{extraname}{2}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 13-May-2020]}
+      \field{title}{COVID-19 educational disruption and response}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://en.unesco.org/covid19/educationresponse
+      \endverb
+      \verb{url}
+      \verb https://en.unesco.org/covid19/educationresponse
+      \endverb
+    \endentry
+    \entry{unesco2020DLsolutions}{article}{}
+      \name{author}{1}{}{%
+        {{hash=24a0ef0a6269be289db4de9570763de3}{%
+           family={UNESCO},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{fullhash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{bibnamehash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{authorbibnamehash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{authornamehash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{authorfullhash}{24a0ef0a6269be289db4de9570763de3}
+      \field{extraname}{3}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradate}{3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 13-May-2020]}
+      \field{title}{Distance learning solutions}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://en.unesco.org/covid19/educationresponse/solutions
+      \endverb
+      \verb{url}
+      \verb https://en.unesco.org/covid19/educationresponse/solutions
       \endverb
     \endentry
     \entry{vaughan2014web}{article}{}
@@ -726,6 +994,37 @@
       \field{year}{2014}
       \field{pages}{707\bibrangedash 720}
       \range{pages}{14}
+    \endentry
+    \entry{wallace2003online}{article}{}
+      \name{author}{1}{}{%
+        {{hash=dee0830373cab87b2bdfdc54f79d5bd6}{%
+           family={Wallace},
+           familyi={W\bibinitperiod},
+           given={Raven\bibnamedelima M},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{dee0830373cab87b2bdfdc54f79d5bd6}
+      \strng{fullhash}{dee0830373cab87b2bdfdc54f79d5bd6}
+      \strng{bibnamehash}{dee0830373cab87b2bdfdc54f79d5bd6}
+      \strng{authorbibnamehash}{dee0830373cab87b2bdfdc54f79d5bd6}
+      \strng{authornamehash}{dee0830373cab87b2bdfdc54f79d5bd6}
+      \strng{authorfullhash}{dee0830373cab87b2bdfdc54f79d5bd6}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Education, Communication \& Information}
+      \field{number}{2}
+      \field{title}{Online learning in higher education: A review of research on interactions among teachers and students}
+      \field{volume}{3}
+      \field{year}{2003}
+      \field{pages}{241\bibrangedash 280}
+      \range{pages}{40}
     \endentry
     \entry{willis2020using}{article}{}
       \name{author}{2}{}{%
