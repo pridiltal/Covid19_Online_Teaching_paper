@@ -157,6 +157,72 @@
       \field{pages}{338\bibrangedash 341}
       \range{pages}{4}
     \endentry
+    \entry{benson2002usability}{book}{}
+      \name{author}{9}{}{%
+        {{hash=c58c11f52283f63a82b1ef751b96e2b3}{%
+           family={Benson},
+           familyi={B\bibinitperiod},
+           given={Lisa},
+           giveni={L\bibinitperiod}}}%
+        {{hash=5eb625465c1d286f8f8fc4a62f13c4f1}{%
+           family={Elliott},
+           familyi={E\bibinitperiod},
+           given={Dean},
+           giveni={D\bibinitperiod}}}%
+        {{hash=94c0b4e071e86a74d681ba3394cd97ca}{%
+           family={Grant},
+           familyi={G\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=48c33e999d5896a6bad4d72c4191f997}{%
+           family={Holschuh},
+           familyi={H\bibinitperiod},
+           given={Doug},
+           giveni={D\bibinitperiod}}}%
+        {{hash=24fb77147c8b043e4f1608b039fcc6e9}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Beaumie},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5aedd2b120eb4ad2863f7ec73a99797f}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Hyeonjin},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b361cc0829c47ae381ef8a94258dae1a}{%
+           family={Lauber},
+           familyi={L\bibinitperiod},
+           given={Erick},
+           giveni={E\bibinitperiod}}}%
+        {{hash=b83e9f627c1ddd927e36cde17379ac7d}{%
+           family={Loh},
+           familyi={L\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7f5def6361a2f18e8f2a4deafbc4baf6}{%
+           family={Reeves},
+           familyi={R\bibinitperiod},
+           given={Thomas\bibnamedelima C},
+           giveni={T\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for the Advancement of Computing in Education (AACE)}%
+      }
+      \strng{namehash}{2e6e382ae62d3ebbcc7dac1e2b522a61}
+      \strng{fullhash}{e9871c114b64d5d1673029180d64e1bf}
+      \strng{bibnamehash}{e9871c114b64d5d1673029180d64e1bf}
+      \strng{authorbibnamehash}{e9871c114b64d5d1673029180d64e1bf}
+      \strng{authornamehash}{2e6e382ae62d3ebbcc7dac1e2b522a61}
+      \strng{authorfullhash}{e9871c114b64d5d1673029180d64e1bf}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Usability and instructional design heuristics for e-learning evaluation}
+      \field{year}{2002}
+    \endentry
     \entry{carneiro2009google}{article}{}
       \name{author}{2}{}{%
         {{hash=1634969bfb9cd944bb776582313011b5}{%
@@ -313,6 +379,37 @@
       \field{year}{2019}
       \field{pages}{91\bibrangedash 103}
       \range{pages}{13}
+    \endentry
+    \entry{conrad2002deep}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d0d3a8ef1a48a5946369f0f87eccdd8f}{%
+           family={Conrad},
+           familyi={C\bibinitperiod},
+           given={Dianne},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CANADIAN ASSOCIATION FOR DISTANCE EDUCATION}%
+      }
+      \strng{namehash}{d0d3a8ef1a48a5946369f0f87eccdd8f}
+      \strng{fullhash}{d0d3a8ef1a48a5946369f0f87eccdd8f}
+      \strng{bibnamehash}{d0d3a8ef1a48a5946369f0f87eccdd8f}
+      \strng{authorbibnamehash}{d0d3a8ef1a48a5946369f0f87eccdd8f}
+      \strng{authornamehash}{d0d3a8ef1a48a5946369f0f87eccdd8f}
+      \strng{authorfullhash}{d0d3a8ef1a48a5946369f0f87eccdd8f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of distance education}
+      \field{number}{1}
+      \field{title}{Deep in the hearts of learners: Insights into the nature of online community}
+      \field{volume}{17}
+      \field{year}{2002}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
     \endentry
     \entry{cook2011assessing}{article}{}
       \name{author}{4}{}{%
@@ -511,6 +608,33 @@
       \field{year}{2020}
       \field{pages}{192\bibrangedash 197}
       \range{pages}{6}
+    \endentry
+    \entry{giorgino2009computing}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c24e6d3eb07e2c01ebb875f8dca15f30}{%
+           family={Giorgino},
+           familyi={G\bibinitperiod},
+           given={Toni},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{fullhash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{bibnamehash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{authorbibnamehash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{authornamehash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \strng{authorfullhash}{c24e6d3eb07e2c01ebb875f8dca15f30}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of statistical Software}
+      \field{title}{Computing and visualizing dynamic time warping alignments in R: the dtw package}
+      \field{volume}{31}
+      \field{year}{2009}
+      \field{pages}{1\bibrangedash 24}
+      \range{pages}{24}
     \endentry
     \entry{husnayain2020applications}{article}{}
       \name{author}{3}{}{%

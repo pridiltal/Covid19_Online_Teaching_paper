@@ -79,17 +79,7 @@ Eventhough google trend search quiries provide massive amount of data, more care
 
 ## Methodology
 
-
-In this work we use  Google Analytics search index series  as a measurement proxy to investigate  emerging evidence about  distance learning and the popularity and the public interest in various distance education solutions. We use weekly  Google Analytics search index series of various distance learning solutions during covid-19 pandemic. We limited all of our searches to the period from 1 December 2019 to 15 August 2021 to match the  period of Covid-19 pandemic.  Through this we want to capture the volume of interest in the public realm about distance education solutions and how this changes over time. We also study the correlation between weekly web searches and the number of  weekly new cases of covid-19.
-
-
-First "Distance education” and related terms were searched. 
-
-
-We visualise our data and we then employ time series modelling to capture
-
-
-## Keyword selection
+In this work we use  Google Analytics search index series  as a measurement proxy to investigate  emerging evidence about  distance learning and the popularity and the public interest in various distance education solutions. We use weekly  Google Analytics search index series of various distance learning solutions during covid-19 pandemic. We limited all of our searches to the period from 1 December 2019 to 15 August 2021 to match the  period of Covid-19 pandemic.  Through this we want to capture the volume of interest in the public realm about distance education solutions and how this changes over time. We also study the correlation between weekly web searches and the number of weekly  cases of covid-19.
 
 There are different types  of interactions that facilitate learners to construct knowledge in distance education environments. These are learner–content interactions, learner–instructor interactions, learner–learner interactions and  learner–interface interaction [@wallace2003online]. 
 
@@ -105,22 +95,131 @@ Eventhough, the solutions they had recommended do not carry their explicit endor
 <!-- completed up to page 30-->
 
 
-In google trend It is possible to search for up to five queries each time [21].
-
-Google Trends does not report the absolute search volume of a single term but does report the relative search volumes for up to five multiple terms [@vaughan2014web].
-
- We entered up to five universities at a time and recorded their relative ranking scores, we then entered a different group of universities, some of which overlapped with the previous group, and we recorded the relative ranking scores again. Through this repeated process of relative comparison, we were able to obtain relative ranking scores for all uni- versities in the study. (Vaughan & Romero-Frias 2014)
-
-## Analysis
-
-bola the most searched item on Yahoo engine and the fifth most searched term on Google in 2014 [2, 3].
+Google Trends allows to search for up to five queries each time [@vaughan2014web]. We did our analysis under 11 sub segmentations namely, digital learning management systems, systems built for use on basic mobile phones, systems with strong offline functionality,  Massive Open Online Course (MOOC) Platforms, self-directed learning content, mobile reading applications, Collaboration platforms that support live-video communication, tools for teachers to create of digital learning content, external repositories of distance learning solutions, tools for online proctoring and Resources to provide psychosocial support. The segmentation was mainly motivated by the list of distance learning solutions published by UNESCO in response to Covid 19 pandemic. 
 
 
-Duifferent attesnion for different etrms 
-The lack of consistency in terminology inevitably affects not only the researchers who would like to build upon the findings, but also impacts designers who are creating similar types of environments.  The findings show great differences in the meaning of foundational terms that are used in the field, but also provide implications internationally for the referencing, sharing, and the collaboration of results detailed in varying research studies (Moore, Dickson-Deane & Galyen 2011).
+In google trends, it is possible to search for only up to five queries at a  time. Therefore, under each segmentation we entered up to five distance learning tools at a time and recorded their relative ranking scores. An iterative pairwise comparison was first used to identify the series that has highest search volume during the study period. Through this iterative process of relative comparison, we were able to identify the tool with the highest relative ranking score. Then the relative ranking scores for all the other tools in the given segmentation was obtained relative to the previously detected series with the highest ranking scores [@vaughan2014web].
+ 
+Both visual and analytical approaches were used to  analyse the changes in web search queries at the global level over the entire period of the Covid-19 pandemic to identify the emerging evidence about the impact of  COVID-19 pandemic on distance education.  We also evaluated the  relationship between weekly web searches and the number of  weekly global cases of covid-19. Cross correlation analysis and  the dynamic time warping algorithm [@giorgino2009computing] were performed  to investigate the relationship and similarities between the signatures of  covid-19 related search volume data  and distance education related search volume data.
+
+
+## Results
+
+
+Search volume index graphs for Covid 19 related terms worldwide (Figures \ref{fig:distanceLearningWorldAnalysis} (b)) shows that the highest peak coincided with the start of the pandemic. Surprisingly, the search volume index graph for distanced education related terms (Figures \ref{fig:distanceLearningWorldAnalysis} (c)) also shows a similar spike at the start of the pandemic.  According to @moore2011learning, "distance education" is the most renowned descriptor used when referencing distance learning. However, both  @benson2002usability and @conrad2002deep introduced "online learning"  as the most "recent version", "never version" and "improved version" of distance learning. The google search trend pattern corresponds to the term "online learning"  (Figures \ref{fig:distanceLearningWorldAnalysis} (c)) confirms the above claim as it is the most searched distance education related term throughout  Covid-19 pandemic. Despite quantitative differences in terms of relative search volume, the series generated by the two terms "Distance learning" and "online teaching" demonstrate a similar trend during the study period. Covid-19 related web searches declined in the months after the WHO announcement of the Covid-19 pandemic, despite the increase in Covid-19 cases. A similar decline could be detected in distance education related terms. further,  a second was observed only in education related terms  after the WHO announcement of the Covid-19 pandemic. This could be due to the near total closures of schools happened  with the declaration of  Covid-19 as a pandemic.  
+
+
+
+```{r dtw, fig.height=5, fig.cap= "Visualization of Dynamic Time Warping Alignments"}
+```
+
+```{r dtw1, fig.height=4, fig.cap= "Visualization of Dynamic Time Warping Alignments between 'online learning' and 'corona'", dependson="dtw"}
+```
+
+```{r dtw2, fig.height=4, fig.cap= "Visualization of Dynamic Time Warping Alignments  'online learning' and 'covid'", dependson="dtw"}
+```
+
+The pairwise comparison performed  using  Dynamic Time Warping algorithm. Under this approach the two time series are stretched or compressed  locally in order to make one resemble the other as much as possible. The distance between the two series is then computed by summing the distances of individual aligned elements [@giorgino2009computing].  Two pairwise comparisons, "corona"  with "online learning" and   "covid" with "online learning" were conducted to see the impact  from covid 19 on distance education. Both pairwise comparison show a significant  areas of overlap and a similar dynamic pattern (Figures \ref{fig:dtw1} (a) and  \ref{fig:dtw2} (a)). The normalized distance between the two series in the two comparisons are  0.1326197 and 0.1828299, respectively. This also provides further confirmation for  the similarity of the google trend  search profiles.
+
+The entirety of the blue warping path flows through green pastures further confirms the similarity between the search pattern related to covid 19 and distance education (Figures \ref{fig:dtw1} (b) and  \ref{fig:dtw2} (b)). The orange volcanic topography that highlights regions of nonalignment of series in question if mapped through this region demonstrate a significant difference in online search behaviours before and after covid 19 pandemic (Figures \ref{fig:dtw1} (b) and  \ref{fig:dtw2} (b)).
+
+The degree of digression of blue line from the ideal 45-degree straight line indicates a dissimilarity of the two time
+series (Figures \ref{fig:dtw1} (b) and  \ref{fig:dtw2} (b)). In 2019 the infection was recognized as a virus which is genetically related to the corona virus responsible for the Severe Acute Respiratory Syndrome (SARS) outbreak of 2003 which infected over 8,000 people from different countries that resulted more than 700 deaths worldwide. By the time it was know as "corona", it was not a global concern and was mostly limited to China. During that time people did not pay much attention to online learning as  conventional classroom learning approach was the most popular teaching learning strategy prior to Covid 19 pandemic all around the world. This is evident from  the rough flat line from approximately 120 to 170 on the Query Index axis.
+
+
+Later with the spread of the virus worldwide, WHO  named it as  COVID-19 (COrona VIrus Diagnosed in 2019) and then declared it as a pandemic on March 11, 2020. With that, a near total closure of schools were observed all around the world (Figures \ref{fig:covidImpactWorld}).  With this sudden unexpected movement, online learning  also became an equally important global concern, similar to covid 19 pandemic.  This similar  behaviour in  public attention towards both aspects is confirmed by the blue line that fall on near 45-degree line  from approximately 120 to 150 on the Query Index axis. This also confirms the impact of covid 19 on distance education and online learning. 
+
+Then, a cross correlation analysis was performed to estimate the lag between covid 19 related terms and the distance education related terms (Figures \ref{fig:ccfAnalysis}). A close relationship was evident between covid related search patterns and the search patterns of the terms "Online learning", "Distance learning" and "Online teaching". The significant cross-correlation coefficients  at lag zero confirms  contemporaneous relationship between the covid related search terms and distance learning related search terms. The significant cross correlation values at lag one or two also confirms the sudden impact of covid 19 pandemic on distance education related public concerns (Figures \ref{fig:ccfAnalysis} (a) - (c) and (f) - (h)).  However, no significant  synchronization was observed  between the search patterns of "distance education" and "online proctoring" and covid 19 related search trends (Figures \ref{fig:ccfAnalysis} (d), (i), (e), (j)).  
+
+
+```{r ccfAnalysis, fig.height=8, fig.cap= "Cross-correlation analysis between distance learning related online search terms and covid 19 relate online search terms during Covid-19 pandemic"}
+```
+
+
+```{r Digital_lms_data_download, eval=FALSE}
+```
+
+```{r DigitalLmsAnalysis, cache=FALSE}
+```
+
+```{r mobile_phones_apps_data_download, eval=FALSE}
+```
+
+```{r mobile_phones_apps_analysis, dependson="DigitalLmsAnalysis"}
+```
+
+```{r offline_functionality_data_download, eval=FALSE}
+```
+
+```{r offline_functionality_analysis, dependson="mobile_phones_apps_analysis"}
+```
+
+```{r mooc_data_download, eval=FALSE}
+```
+
+```{r mooc_analysis, dependson="offline_functionality_analysis"}
+```
+
+```{r Self_directed_learning_data_download, eval=FALSE}
+```
+
+```{r Self_directed_learning_analysis, dependson="mooc_analysis"}
+```
+
+
+```{r Mobile_reading_data_download, eval=FALSE}
+```
+
+```{r Mobile_reading_analysis, dependson="Self_directed_learning_analysis"}
+```
+
+```{r Collaboration_platforms_data_download, eval=FALSE}
+```
+
+```{r Collaboration_platforms_eduonly_analysis, dependson="Mobile_reading_analysis"}
+```
+
+```{r Tools_for_teachers_data_download, eval=FALSE}
+```
+
+```{r Tools_for_teachers_analysis, dependson="Collaboration_platforms_eduonly_analysis"}
+```
+
+
+```{r External_repositories_DL_data_download, eval=FALSE}
+```
+
+```{r External_repositories_DL_analysis, dependson="Tools_for_teachers_analysis"}
+```
+
+
+```{r Online_proctoring_data_download, eval=FALSE}
+```
+
+
+```{r Online_proctoring_analysis, dependson="External_repositories_DL_analysis"}
+```
+
+```{r psychosocial_support_data_download, eval=FALSE}
+```
+
+\newpage
+## GT footprint
+
+```{r plot1, fig.height=12, fig.cap="GT footprint"}
+```
+
+\newpage
+
+## GT footprint
+```{r plot2, fig.height=12, fig.cap="GT footprint"}
+```
 
 
 ## exams
 
 Strategies to postpone, skip or adminsiter examinations at a distance raise serious concerns about fairness, especialy when access to learning becomes variable. Disruptions to assessments results in stress for students and their families and can trigger disengagement. [@unesco2020covid; @unescoadverse2020]
+
 ## Discussion and Conclusion
+
+The lack of consistency in terminology inevitably affects not only the researchers who would like to build upon the findings, but also impacts designers who are creating similar types of environments.  The findings show great differences in the meaning of foundational terms that are used in the field, but also provide implications internationally for the referencing, sharing, and the collaboration of results detailed in varying research studies (Moore, Dickson-Deane & Galyen 2011).

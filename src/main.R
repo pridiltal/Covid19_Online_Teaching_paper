@@ -320,81 +320,181 @@ p <- p1/p3/p5
 print(p)
 
 
-## ---- ccf_analysis_covid_online_edu
-# Cross-Correlation Function Estimation
-data_world <- read.csv( here::here(
-  "Paper_online_Learning_Dec", "data",
-  "education_search_world.csv"))
-# hits is a character variable. Convert hits into a numeric variable
-hits1<- ifelse(data_world$hits ==  "<1", 0,
-               data_world$hits)
-data_world$hits <- as.numeric(hits1)
-keyword_ord<- data_world %>% 
-  group_by(keyword) %>%
-  summarise(total_hits = 
-              sum(hits, na.rm = TRUE)) %>%
-  arrange(total_hits) %>% 
-  select(keyword) %>% 
-  as_vector()
-dataW_edu <- data_world %>%
-  select(date, keyword, hits) %>%
-  mutate(keyword = factor(keyword, 
-                          levels = keyword_ord))
-dataW_edu$date = as.Date(dataW$date, "%Y-%m-%d")
-print(head(dataW_edu))
 
-d_edu<- dataW_edu %>% 
-  filter(keyword == "Online teaching") %>%
-  select(-keyword) 
-d_edu$date = as.Date(d_edu$date, "%Y-%m-%d")
-d_edu <- d_edu %>%as_tsibble(index = date) 
-print(head(d_edu))
+## ---- dtw
 
+# Covid cases
+covidcasesW <- read.csv(here::here( "data", "covid_cases.csv"))
+covidcasesW <- covidcasesW %>% select(-X)
+
+## covid search google trends
 data_covid <- read.csv( here::here(
-  "Paper_online_Learning_Dec", "data", 
-  "covid_search_world.csv"))
+  "data", "covid_search_world.csv"))
 hits1<- ifelse(data_covid$hits ==  "<1", 0, data_covid$hits)
 data_covid$hits <- as.numeric(hits1)
-keyword_ord<- data_covid %>% 
-  group_by(keyword) %>%
-  summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-  arrange(total_hits) %>% select(keyword) %>% as_vector()
+# covid search google trends - arrange in wide format
+covid_search <- data_covid %>%
+  select(date, hits, keyword) %>%
+  pivot_wider(names_from = keyword, values_from = hits)
 
-dataW_covid <- data_covid %>%
-  select(date, keyword, hits) %>%
-  mutate(keyword = factor(keyword, levels = keyword_ord))
-dataW_covid$date = as.Date(dataW_covid$date, "%Y-%m-%d")
+## online learning google trends
+data_world <- read.csv( here::here(
+  "data", "education_search_world.csv"))
+# hits is a character variable. Convert hits into a numeric variable
+hits1<- ifelse(data_world$hits ==  "<1", 0, data_world$hits)
+data_world$hits <- as.numeric(hits1)
+# arrange in wide format
+edu_search <- data_world %>%
+  select(date, hits, keyword) %>%
+  pivot_wider(names_from = keyword, values_from = hits)
 
-d_covid<- dataW_covid %>% 
-  filter(keyword == "corona") %>%
-  select(-keyword) %>% 
-  as_tsibble(index = date) 
-data2 <- left_join(d_edu, d_covid, by =  "date",
-                  suffix = c(".edu", ".corona"))
+## Time Lagged Cross Correlation 
+library(fpp3)
+data <- full_join(covid_search, 
+                  edu_search,  by = "date" ) %>%
+  mutate(date = as.Date(date)) %>%
+  as_tsibble(index = date)
 
-p<- data2 %>% CCF(hits.edu, hits.corona) %>%autoplot()
-print(p)
+library(dtw)
+x<- scale(data$`Online Learning`)
+y<- scale(data$corona)
+z<- scale(data$covid)
 
-#print(p)
-#tbl1 <- tibble(
-#  date = as.Date("2017-01-01") + 0:99,
-#  value = rnorm(100)
-#) 
+xyz <- cbind(x,y,z)
+xyz <- na.omit(xyz)
 
-#tbl1 <- as_tsibble(tbl1)
+align1 <- dtw(xyz[,1], xyz[,1]*0, keep = T)
+align1 <- dtw(xyz[,1], xyz[,2], keep = T)
+align2 <- dtw(xyz[,1], xyz[,3], keep = T)
 
-#tbl2 <- tibble(
- # date = as.Date("2017-01-01") + 0:99,
-#  value = rnorm(100, 50)
-#) 
 
-#tbl2 <- as_tsibble(tbl1)
+## ---- dtw1
+# par(mfrow=c(2,2), mar=c(0,1,0.75,0))
+p1 <- dtwPlotTwoWay(align1,
+          main = "(a) Pointwise comparison between 'Online Learning' and 'corona'")
+p2 <- dtwPlotDensity(align1, normalize = TRUE, main = "(b) Cumulative cost density 
+                     with the warping path between 'Online Learning' and 'corona' ")
 
-#data <- left_join(tbl1, tbl2, by = "date")
-#data %>% CCF(value.x, value.y) %>% autoplot()
 
-## source: https://online.stat.psu.edu/stat510/lesson/8/8.2
-# The result, showing lag (the  in xt+h) and correlation with yt :
+## ---- dtw2
+p3 <- dtwPlotTwoWay(align2, main = "(a) Pointwise comparison between 'Online Learning' and 'covid'")
+p4 <-dtwPlotDensity(align2, normalize = TRUE, main = "(b) Cumulative cost density 
+                    with the warping path between 'Online Learning' and 'covid'")
+
+
+## ---- ccfAnalysis
+# Covid cases
+covidcasesW <- read.csv(here::here("data", "covid_cases.csv"))
+covidcasesW <- covidcasesW %>% select(-X)
+
+## covid search google trends
+data_covid <- read.csv( here::here( "data", "covid_search_world.csv"))
+hits1<- ifelse(data_covid$hits ==  "<1", 0, data_covid$hits)
+data_covid$hits <- as.numeric(hits1)
+# covid search google trends - arrange in wide format
+covid_search <- data_covid %>%
+  select(date, hits, keyword) %>%
+  pivot_wider(names_from = keyword, values_from = hits)
+
+## online learning google trends
+data_world <- read.csv( here::here( "data", "education_search_world.csv"))
+# hits is a character variable. Convert hits into a numeric variable
+hits1<- ifelse(data_world$hits ==  "<1", 0, data_world$hits)
+data_world$hits <- as.numeric(hits1)
+# arrange in wide format
+edu_search <- data_world %>%
+  select(date, hits, keyword) %>%
+  pivot_wider(names_from = keyword, values_from = hits)
+
+## Time Lagged Cross Correlation 
+library(fpp3)
+data <- full_join(covid_search, edu_search,  by = "date" ) %>%
+  mutate(date = as.Date(date)) %>%
+  as_tsibble(index = date)
+
+
+p1 <- data %>% 
+  mutate(diff_corona = difference(corona),
+         diff_online = difference(`Online Learning`)) %>%
+  CCF(diff_corona, diff_online ) %>%
+  autoplot()+
+  labs(title= "(a) 'Corona' with 'Online learning'")
+
+p2 <- data %>% 
+  mutate(diff_corona = difference(corona),
+         diff_dist = difference(`Distance learning`)) %>%
+  CCF(diff_corona, diff_dist ) %>%
+  autoplot()+
+  labs(title= "(b) 'Corona' with 'Distance learning'")
+
+p3 <- data %>% 
+  mutate(diff_corona = difference(corona),
+         diff_teach = difference(`Online teaching`)) %>%
+  CCF(diff_corona, diff_teach ) %>%
+  autoplot()+
+  labs(title= "(c) 'Corona' with 'Online teaching'")
+
+p4 <- data %>% 
+  mutate(diff_corona = difference(corona),
+         diff_edu = difference(`Distance education`)) %>%
+  CCF(diff_corona, diff_edu ) %>%
+  autoplot()+
+  labs(title= "(d) 'Corona' with 'Distance education'")
+
+p5 <- data %>% 
+  mutate(diff_corona = difference(corona),
+         diff_proc = difference(`online proctoring`)) %>%
+  CCF(diff_corona, diff_proc ) %>%
+  autoplot()+
+  labs(title= "(e) 'Corona' with 'Online proctoring'")
+
+
+
+pa <- data %>% 
+  mutate(diff_corona = difference(`covid 19`),
+         diff_online = difference(`Online Learning`)) %>%
+  CCF(diff_corona, diff_online ) %>%
+  autoplot()+
+  labs(title= "(f) 'Covid 19' with 'Online learning")
+
+pb <- data %>% 
+  mutate(diff_corona = difference(`covid 19`),
+         diff_dist = difference(`Distance learning`)) %>%
+  CCF(diff_corona, diff_dist ) %>%
+  autoplot()+
+  labs(title= "(g) 'Covid 19' with 'Distance learning'")
+
+pc <- data %>% 
+  mutate(diff_corona = difference(`covid 19`),
+         diff_teach = difference(`Online teaching`)) %>%
+  CCF(diff_corona, diff_teach ) %>%
+  autoplot()+
+  labs(title= "(h) 'Covid 19' with 'Online teaching'")
+
+pd <- data %>% 
+  mutate(diff_corona = difference(`covid 19`),
+         diff_edu = difference(`Distance education`)) %>%
+  CCF(diff_corona, diff_edu ) %>%
+  autoplot()+
+  labs(title= "(i) 'Covid 19' with 'Distance education'")
+
+pe <- data %>% 
+  mutate(diff_corona = difference(`covid 19`),
+         diff_proc = difference(`online proctoring`)) %>%
+  CCF(diff_corona, diff_proc ) %>%
+  autoplot()+
+  labs(title= "(j) 'Covid 19' with 'Online proctoring'")
+
+
+(p1 | pa ) / 
+  (p2 | pb )/
+  (p3 | pc )/
+  (p4 | pd )/
+  (p5 | pe )
+
+
+
+
 
 
 ## ---- download_education_data
@@ -410,16 +510,13 @@ edu_world <- gtrends( gprop =channel,
                       time = time ,
                       category = category)
 write.csv(edu_world$interest_over_time, 
-          here::here("Paper_online_Learning_Dec", 
-                     "data", 
+          here::here("data", 
                      "trends_edu_world.csv"))
 write.csv(edu_world$related_topics,
-          here::here("Paper_online_Learning_Dec",
-                     "data", 
+          here::here("data", 
                      "related_topics_edu_world.csv"))
 write.csv(edu_world$related_queries, 
-          here::here("Paper_online_Learning_Dec",
-                     "data",
+          here::here( "data",
                      "related_queries_edu_world.csv"))
 
 
@@ -434,16 +531,13 @@ dist_edu_world <- gtrends( gprop =channel,
                            time = time ,
                            category = category)
 write.csv(dist_edu_world$interest_over_time,
-          here::here("Paper_online_Learning_Dec",
-                     "data",
+          here::here("data",
                      "trends_dist_edu_world.csv"))
 write.csv(dist_edu_world$related_topics,
-          here::here("Paper_online_Learning_Dec",
-                     "data", 
+          here::here("data", 
                      "related_topics_dist_edu_world.csv"))
 write.csv(dist_edu_world$related_queries, 
-          here::here("Paper_online_Learning_Dec",
-                     "data", 
+          here::here("data", 
                      "related_queries_dist_edu_world.csv"))
 
 
@@ -461,15 +555,12 @@ edu_SL <- gtrends( gprop =channel,
                    geo=country, time = time ,
                    category = category)
 write.csv(edu_SL$interest_over_time, 
-          here::here("Paper_online_Learning_Dec",
-                     "data", "trends_edu_SL.csv"))
+          here::here("data", "trends_edu_SL.csv"))
 write.csv(edu_SL$related_topics, 
-          here::here("Paper_online_Learning_Dec", 
-                     "data", 
+          here::here("data", 
                      "related_topics_edu_SL.csv"))
 write.csv(edu_SL$related_queries, 
-          here::here("Paper_online_Learning_Dec", 
-                     "data", 
+          here::here("data", 
                      "related_queries_edu_SL.csv"))
 
 
@@ -488,102 +579,17 @@ dist_edu_SL<- gtrends( gprop =channel,
                        time = time , 
                        category = category)
 write.csv(dist_edu_SL$interest_over_time, 
-          here::here("Paper_online_Learning_Dec",
-                     "data", 
+          here::here("data", 
                      "trends_dist_edu_SL.csv"))
 write.csv(dist_edu_SL$related_topics,
-          here::here("Paper_online_Learning_Dec",
-                     "data", 
+          here::here("data", 
                      "related_topics_dist_edu_SL.csv"))
 write.csv(dist_edu_SL$related_queries,
-          here::here("Paper_online_Learning_Dec",
-                     "data", 
+          here::here("data", 
                      "related_queries_dist_edu_SL.csv"))
 
 
-## ---- Draw_map_wolrd_SL
 
-# TS plot for education world
-# TS plot for distance Learning world
-# TS plot for education SL
-# TS plot for distance Learning  SL
-
-W_edu <- read.csv(
-  here::here("Paper_online_Learning_Dec", 
-             "data", "trends_edu_world.csv"))
-W_dist_edu <- read.csv(
-  here::here("Paper_online_Learning_Dec",
-             "data", "trends_dist_edu_world.csv"))
-SL_edu <- read.csv(
-  here::here("Paper_online_Learning_Dec", 
-             "data", "trends_edu_SL.csv"))
-SL_dist_edu <- read.csv(
-  here::here("Paper_online_Learning_Dec",
-             "data", "trends_dist_edu_SL.csv"))
-
-data <- bind_rows(W_edu, W_dist_edu,
-                  SL_edu, SL_dist_edu, 
-                  .id = "id")
-data <- data %>%
-  mutate(
-    id=factor(id, 
-              levels = c(1,2,3,4), 
-              labels = c( "Edu All",
-                         "Dist. Edu All",
-                         "Edu SL", "Dist. Edu SL"))) 
-  
-data <- data %>% select(date, id, hits)
-p <- data %>% 
-  ggplot(aes(x=date,y=id,fill=hits))+
-  geom_tile() + 
-  geom_tile(colour="black",size=0.25)+
-  scale_y_discrete(expand=c(0,0))+
-  scale_x_discrete(
-    expand=c(0,2),
-    breaks=c("2019-12-01", "2020-01-01",
-             "2020-02-01","2020-03-01",
-             "2020-04-01","2020-05-01",
-             "2020-06-01","2020-07-01",
-             "2020-08-01","2020-09-01",
-             "2020-10-01", "2020-11-01",
-             "2020-12-01", "2021-01-01", 
-             "2021-02-01","2021-03-01",
-             "2021-04-01","2021-05-01",
-             "2021-06-01","2021-07-01",
-             "2021-08-01"))+
-  theme_grey(base_size=8)
-
-p  
-
-# World map for education world
-# World map for distance Learning world
-# SL map for education SL
-# SL map for distance Learning  SL
-
-## ---- extract_info
-
-#category <- categories[categories$name=="Education",2] %>% as.numeric()
-country <- c('LK') 
-#set channels 
-channel <- 'web'
-
-get_info_world <- function(x)
-{
-  #trends = gtrends(x, gprop =channel, time = time, category = category )
-  trends = gtrends(x, gprop =channel,
-                   time = time )
-  return(trends$interest_over_time)
-}
-
-get_info_SL <- function(x)
-{
-  #trends = gtrends(x, gprop =channel,geo=country, time = time, category = category )
-  trends = gtrends(x, gprop =channel,
-                   geo=country, time = time )
-   return(trends$interest_over_time)
-  
-
-}
 
 
 ## ---- Digital_lms_data_download
@@ -620,109 +626,44 @@ trends31 <-trends3 %>%
 data_world <- bind_rows(trends1, trends21, 
                         trends31)
 write.csv(data_world,
-          here::here("Paper_online_Learning_Dec",
-                     "data", 
+          here::here("data", 
                      "Digital_lms_world.csv"))
 
 
+## ---- DigitalLmsAnalysis
+fontsize = 12
 
-# extract data for Sri Lanka
-keywords1 <- c("Google Classroom", "CenturyTech", 
-               "ClassDojo", "Edmodo", "Edraak" )
-trends1 <-  gtrends(keywords1, 
-                    gprop =channel,geo=country, 
-                    time = time  )
-trends1 <- trends1$interest_over_time
-keywords2 <- c("Google Classroom", "EkStep",
-               "Moodle", "Nafham", "Paper Airplanes")
-trends2 <-  gtrends(keywords2,
-                    gprop =channel,geo=country,
-                    time = time  )
-trends2 <- trends2$interest_over_time
-keywords3 <- c("Google Classroom", "Schoology",
-               "Seesaw", "Skooler")
-trends3 <-  gtrends(keywords3, 
-                    gprop =channel,geo=country,
-                    time = time  )
-trends3 <- trends3$interest_over_time
-
-trends21 <-trends2 %>%  
-  filter(keyword != "Google Classroom")
-trends31 <-trends3 %>%  
-  filter(keyword != "Google Classroom")
-
-#data_SL<- purrr::map_df(keywords, get_info_SL)
-data_SL <- bind_rows(trends1, trends21, trends31)
-write.csv(data_SL, 
-          here::here("Paper_online_Learning_Dec",
-                     "data", "Digital_lms_SL.csv"))
-
-
-## ---- Digital_lms_analysis
 keywords= c("CenturyTech", "ClassDojo", "Edmodo", "Edraak",
             "EkStep", "Google Classroom", "Moodle", "Nafham",
             "Paper Airplanes", "Schoology", "Seesaw", "Skooler")
 #data_world <- purrr::map_df(keywords, get_info_world)
 
-data_world <- read.csv( here::here("Paper_online_Learning_Dec",
-                                   "data", "Digital_lms_world.csv"))
+data_world <- read.csv( here::here("data", "Digital_lms_world.csv"))
 
 hits1<- ifelse(data_world$hits ==  "<1", 0, data_world$hits)
 data_world$hits <- as.numeric(hits1)
 
 keyword_ord<- data_world %>% 
- group_by(keyword) %>%
+  group_by(keyword) %>%
   summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
- arrange(total_hits) %>% select(keyword) %>% as_vector()
+  arrange(total_hits) %>% select(keyword) %>% as_vector()
 
 dataW <- data_world %>%
   select(date, keyword, hits) %>%
   mutate(keyword = factor(keyword, levels = keyword_ord))
 dataW$date = as.Date(dataW$date, "%Y-%m-%d")
 
-p1 <- dataW %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.1, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("All")+
-  labs(x="",y="")+
-  scale_fill_viridis(guide = "colourbar")+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
-  
 
-data_SL <- read.csv(here::here("Paper_online_Learning_Dec", 
-                               "data", "Digital_lms_SL.csv"))
-
-hits1<- ifelse(data_SL$hits ==  "<1", 0, data_SL$hits)
-data_SL$hits <- as.numeric(hits1)
-keyword_ord<- data_SL %>% 
-  group_by(keyword) %>%
-  summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-  arrange(total_hits) %>% select(keyword) %>% as_vector()
-
-
-dataSL <- data_SL %>%
-  select(date, keyword, hits) %>%
-  mutate(keyword = factor(keyword, levels = keyword_ord))
-dataSL$date = as.Date(dataSL$date, "%Y-%m-%d")
-
-p2 <- dataSL %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.4, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("Sri Lanka")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
-  
-
-#p<- gridExtra::grid.arrange(p1,p2, ncol=1)
-p<- ggarrange(p1,p2, ncol=1,
-              common.legend = TRUE, 
-              legend="bottom", align = "hv")
-print(p)
-
-
+p1 <- dataW %>%
+  as_tsibble(index= date, key = keyword) %>%
+  autoplot(hits, size= 1) +
+  theme(legend.position = "bottom", 
+        text = element_text(size = fontsize), 
+        legend.title = element_blank(),
+        legend.text = element_text(size = fontsize) )+
+  scale_colour_discrete(guide = "colourbar") + 
+  labs(subtitle = "(a) Digital learning management systems
+")
 
 
 ## ---- mobile_phones_apps_data_download
@@ -742,28 +683,8 @@ trends21 <-trends2 %>%  filter(keyword != "Ubongo")
 data_world <- bind_rows(trends1, trends21)
 #data_world <- purrr::map_df(keywords, get_info_world)
 write.csv(data_world, 
-          here::here("Paper_online_Learning_Dec",
-                     "data", 
+          here::here("data", 
                      "mobile_phones_apps_world.csv"))
-
-
-
-# extract data for Sri Lanka
-# KaiOS is the maximum category in Sri Lanka by 15-08-2021
-keywords1 <- c("KaiOS", "Cell-Ed", "Eneza Education", "Funzi", "Ubongo")
-trends1 <-  gtrends(keywords1, gprop =channel,geo=country, time = time  )
-trends1 <- trends1$interest_over_time
-keywords2 <- c("KaiOS", "Ustad Mobile")
-trends2 <-  gtrends(keywords2, gprop =channel,geo=country, time = time  )
-trends2 <- trends2$interest_over_time
-trends21 <-trends2 %>%  filter(keyword != "KaiOS")
-#data_SL<- purrr::map_df(keywords, get_info_SL)
-data_SL <- bind_rows(trends1, trends21)
-#data_SL<- purrr::map_df(keywords, get_info_SL)
-write.csv(data_SL, 
-          here::here("Paper_online_Learning_Dec",
-                     "data", 
-                     "mobile_phones_apps_SL.csv"))
 
 
 
@@ -771,7 +692,7 @@ write.csv(data_SL,
 ## ---- mobile_phones_apps_analysis
 keywords= c("Cell-Ed", "Eneza Education", "Funzi", "KaiOS", "Ubongo", 
             "Ustad Mobile")
-data_world <- read.csv( here::here("Paper_online_Learning_Dec", "data", "mobile_phones_apps_world.csv"))
+data_world <- read.csv( here::here("data", "mobile_phones_apps_world.csv"))
 
 
 keyword_ord<- data_world %>% 
@@ -783,47 +704,17 @@ dataW <- data_world %>%
   select(date, keyword, hits) %>%
   mutate(keyword = factor(keyword, levels = keyword_ord))
 dataW$date = as.Date(dataW$date, "%Y-%m-%d")
-p1 <- dataW %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.1, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("All")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
 
+p2<- dataW %>% as_tibble() %>%
+  distinct(date, keyword, .keep_all = TRUE) %>%
+  as_tsibble(index= date, key = keyword) %>%
+  autoplot(hits, size= 1) +
+  theme(legend.position = "bottom",  text = element_text(size = fontsize), legend.title = element_blank(), legend.text = element_text(size = fontsize))+
+  #scale_colour_viridis_d(guide = "colourbar", direction = -1) + 
+  scale_colour_discrete(guide = "colourbar") + 
+  labs(subtitle ="(b) Systems built for use on basic mobile phones
+")
 
-
-data_SL <- read.csv(here::here("Paper_online_Learning_Dec", "data", "mobile_phones_apps_SL.csv"))
-
-#if(is_empty(data_SL))
-#{
-#  print(p1)
-#} else{
-  keyword_ord<- data_SL %>% 
-    group_by(keyword) %>%
-    summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-    arrange(total_hits) %>% select(keyword) %>% as_vector()
-  
-  
-  dataSL <- data_SL %>%
-    select(date, keyword, hits) %>%
-    mutate(keyword = factor(keyword, levels = keyword_ord))
-  dataSL$date = as.Date(dataSL$date, "%Y-%m-%d")
-p2 <- dataSL %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.4, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("Sri Lanka")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
-
-
-#p<- gridExtra::grid.arrange(p1,p2, ncol=1)
-p<- ggarrange(p1,p2, ncol=1, common.legend = TRUE, legend="bottom", align = "hv" )
-print(p)
-#}
 
 
 ## ---- offline_functionality_data_download
@@ -834,25 +725,12 @@ trends <- trends$interest_over_time
 data_world <- trends
 #data_world <- purrr::map_df(keywords, get_info_world)
 write.csv(data_world,
-          here::here("Paper_online_Learning_Dec",
-                     "data", 
+          here::here("data", 
                      "offline_functionality_world.csv"))
-
-# Extract data from Sri Lanka
-trends <-  gtrends(keywords, gprop =channel,
-                   geo=country, time = time  )
-trends <- trends$interest_over_time
-data_SL <- trends
-#data_SL<- purrr::map_df(keywords, get_info_SL)
-write.csv(data_SL,
-          here::here("Paper_online_Learning_Dec", 
-                     "data",
-                     "offline_functionality_SL.csv"))
-
 
 ## ---- offline_functionality_analysis
 keywords <-  c("Kolibri", "Rumie", "Ustad Mobile")
-data_world <- read.csv( here::here("Paper_online_Learning_Dec", "data", "offline_functionality_world.csv"))
+data_world <- read.csv( here::here( "data", "offline_functionality_world.csv"))
 hits1<- ifelse(
   data_world$hits ==  "<1", 0, data_world$hits)
 data_world$hits <- as.numeric(hits1)
@@ -865,53 +743,16 @@ dataW <- data_world %>%
   select(date, keyword, hits) %>%
   mutate(keyword = factor(keyword, levels = keyword_ord))
 dataW$date = as.Date(dataW$date, "%Y-%m-%d")
-p1 <- dataW %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.1, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("All")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
 
 
-
-#data_SL <- read.csv(here::here("Paper_online_Learning", "data", "offline_functionality_SL.csv"))
-
-data_SL <- read_csv(
-  here::here("Paper_online_Learning_Dec", "data", "offline_functionality_SL.csv"))
-
-if(nrow(data_SL) == 0)
-{
-  print(p1)
-} else{
-  keyword_ord<- data_SL %>% 
-    group_by(keyword) %>%
-    summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-    arrange(total_hits) %>% select(keyword) %>% as_vector()
-  
-  
-  dataSL <- data_SL %>%
-    select(date, keyword, hits) %>%
-    mutate(keyword = factor(keyword, levels = keyword_ord))
-  p2 <- dataSL %>% 
-    ggplot(aes(x=date,y=keyword,fill=hits))+
-    geom_tile(size=0.4, colour = "grey50")+
-    scale_y_discrete(expand=c(0,0))+
-    scale_x_discrete(expand=c(0,0),
-                     breaks=c("2019-12-01","2019-12-01", "2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01"))+
-    ggtitle("Sri Lanka")+
-    labs(x="",y="")+
-    scale_fill_viridis()+
-    theme(panel.grid = element_blank(), text = element_text(size = 16))
-  
-  
-  #p<- gridExtra::grid.arrange(p1,p2, ncol=1)
-  p<- ggarrange(p1,p2, ncol=1, common.legend = TRUE, legend="bottom", align = "hv")
-  print(p)
-}
-
-
+p3<- dataW %>% as_tibble() %>%
+  distinct(date, keyword, .keep_all = TRUE) %>%
+  as_tsibble(index= date, key = keyword) %>% 
+  autoplot(hits, size= 1) +
+  theme(legend.position = "bottom",  text = element_text(size = fontsize), legend.title = element_blank(), legend.text = element_text(size = fontsize))+
+ # scale_colour_viridis_d(guide = "colourbar", direction = -1) + 
+  scale_colour_discrete(guide = "colourbar") + 
+  labs(subtitle ="(c) Systems with strong offline functionality")
 
 ## ---- mooc_data_download
 keywords= c("Alison", "Canvas", "Coursera", "European Schoolnet Academy", 
@@ -933,35 +774,14 @@ trends21 <-trends2 %>%  filter(keyword != "Canvas")
 trends31 <-trends3 %>%  filter(keyword != "Canvas")
 data_world <- bind_rows(trends1, trends21, trends31)
 #data_world <- purrr::map_df(keywords, get_info_world)
-write.csv(data_world, here::here("Paper_online_Learning_Dec", "data", "mooc_world.csv"))
-
-
-# extract data for Sri Lanka
-## Canvas is the maximum search category in Sri Lanka by 15-08-2021
-keywords1 <-c("Canvas", "Alison", "Coursera", "European Schoolnet Academy", "EdX")
-trends1 <-  gtrends(keywords1, gprop =channel,geo=country, time = time  )
-trends1 <- trends1$interest_over_time
-keywords2 <- c("Canvas", "iCourse", "Future Learn", "Icourses", "TED-Ed Earth School")
-trends2 <-  gtrends(keywords2, gprop =channel,geo=country, time = time  )
-trends2 <- trends2$interest_over_time
-keywords3 <-  c("Canvas", "Udemy", "XuetangX")
-trends3 <-  gtrends(keywords3, gprop =channel,geo=country, time = time )
-trends3 <- trends3$interest_over_time
-trends21 <-trends2 %>%  filter(keyword != "Canvas")
-trends31 <-trends3 %>%  filter(keyword != "Canvas")
-#data_SL<- purrr::map_df(keywords, get_info_SL)
-data_SL <- bind_rows(trends1, trends21, trends31)
-#data_SL<- purrr::map_df(keywords, get_info_SL)
-write.csv(data_SL, here::here("Paper_online_Learning_Dec", "data", "mooc_SL.csv"))
-
-
+write.csv(data_world, here::here( "data", "mooc_world.csv"))
 
 
 ## ---- mooc_analysis
 keywords= c("Alison", "Canvas", "Coursera", "European Schoolnet Academy", 
             "EdX", "iCourse", "Future Learn", "Icourses", "TED-Ed Earth School",
             "Udemy", "XuetangX")
-data_world <- read.csv( here::here("Paper_online_Learning_Dec", "data", "mooc_world.csv"))
+data_world <- read.csv( here::here( "data", "mooc_world.csv"))
 
 hits1<- ifelse(data_world$hits ==  "<1", 0, data_world$hits)
 data_world$hits <- as.numeric(hits1)
@@ -975,42 +795,14 @@ dataW <- data_world %>%
   select(date, keyword, hits) %>%
   mutate(keyword = factor(keyword, levels = keyword_ord))
 dataW$date = as.Date(dataW$date, "%Y-%m-%d")
-p1 <- dataW %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.1, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("All")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
-
-
-
-data_SL <- read.csv(here::here("Paper_online_Learning_Dec", "data", "mooc_SL.csv"))
-
-  keyword_ord<- data_SL %>% 
-    group_by(keyword) %>%
-    summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-    arrange(total_hits) %>% select(keyword) %>% as_vector()
-  
-  
-  dataSL <- data_SL %>%
-    select(date, keyword, hits) %>%
-    mutate(keyword = factor(keyword, levels = keyword_ord))
-  dataSL$date = as.Date(dataSL$date, "%Y-%m-%d")
-  p2 <- dataSL %>% 
-    ggplot(aes(x=date,y=keyword,fill=hits))+
-    geom_tile(size=0.4, colour = "grey50")+
-    scale_y_discrete(expand=c(0,0))+
-    ggtitle("Sri Lanka")+
-    labs(x="",y="")+
-    scale_fill_viridis()+
-    theme(panel.grid = element_blank(), text = element_text(size = 16))
-  
-  
-  #p<- gridExtra::grid.arrange(p1,p2, ncol=1)
-  p<- ggarrange(p1,p2, ncol=1, common.legend = TRUE, legend="bottom", align = "hv")
-  print(p)
+p4 <- dataW %>% as_tibble() %>%
+  distinct(date, keyword, .keep_all = TRUE) %>%
+  as_tsibble(index= date, key = keyword) %>% 
+  autoplot(hits, size= 1) +
+  theme(legend.position = "bottom",  text = element_text(size = fontsize), legend.title = element_blank(), legend.text = element_text(size = fontsize))+
+  #scale_colour_viridis_d(guide = "colourbar", direction = -1) + 
+  scale_colour_discrete(guide = "colourbar") + 
+  labs(subtitle ="(d) Massive Open Online Course (MOOC) Platforms")
 
 
 
@@ -1058,55 +850,12 @@ trends71 <-trends3 %>%  filter(keyword != "Quizlet")
 data_world <- bind_rows(trends1, trends21, trends31, trends41, trends51, trends61, trends71)
 
 #data_world <- purrr::map_df(keywords, get_info_world)
-write.csv(data_world, here::here("Paper_online_Learning_Dec", "data", "Self_directed_learning_world.csv"))
+write.csv(data_world, here::here( "data", "Self_directed_learning_world.csv"))
 
 keywords <- c("Quizlet", "YouTube")
 trends <-  gtrends(keywords, gprop =channel, time = time )
 youtube_world <- trends$interest_over_time
-write.csv(youtube_world, here::here("Paper_online_Learning_Dec", "data", "youtube_world.csv"))
-
-
-######################33
-# Extract data for Sri Lanka  
-# British Council highest as of 15-08-2021
-keywords1 <- c("Quizlet", "ABRA", "British Council", "Byju’s", "Code It")
-trends1 <-  gtrends(keywords1, gprop =channel,geo=country, time = time )
-trends1 <- trends1$interest_over_time
-keywords2 <- c("British Council", "Code.org", "Code Week", "Discovery Education", "Duolingo")
-trends2 <-  gtrends(keywords2, gprop =channel,geo=country, time = time )
-trends2 <- trends2$interest_over_time
-keywords3 <- c("British Council", "Edraak", "Facebook Get Digital", "Feed the Monster",
-               "History of Africa")
-trends3 <-  gtrends(keywords3, gprop =channel,geo=country, time = time )
-trends3 <- trends3$interest_over_time
-keywords4 <- c("British Council", "Geekie", "Khan Academy", "KitKit School", "LabXchange")
-trends4 <-  gtrends(keywords4, gprop =channel,geo=country, time = time )
-trends4 <- trends4$interest_over_time
-keywords5 <- c("British Council", "Madrasa", "Mindspark", "Mosoteach", "Music Crab")
-trends5 <-  gtrends(keywords5, gprop =channel,geo=country, time = time )
-trends5 <- trends5$interest_over_time
-keywords6 <- c("British Councilt","OneCourse", "Polyup", "Quizlet", "SDG Academy Library")
-trends6 <-  gtrends(keywords6, gprop =channel, geo=country,time = time )
-trends6 <- trends6$interest_over_time
-keywords7 <- c("British Council", "Siyavula", "Smart History")
-trends7 <-  gtrends(keywords7, gprop =channel,geo=country, time = time )
-trends7 <- trends7$interest_over_time
-trends21 <-trends2 %>%  filter(keyword != "British Council")
-trends31 <-trends3 %>%  filter(keyword != "British Council")
-trends41 <-trends2 %>%  filter(keyword != "British Council")
-trends51 <-trends3 %>%  filter(keyword != "British Council")
-trends61 <-trends2 %>%  filter(keyword != "British Council")
-trends71 <-trends3 %>%  filter(keyword != "British Council")
-data_SL <- bind_rows(trends1, trends21, trends31, trends41, trends51, trends61, trends71)
-
-#data_world <- purrr::map_df(keywords, get_info_world)
-write.csv(data_SL, here::here("Paper_online_Learning_Dec", "data", "Self_directed_learning_SL.csv"))
-
-keywords <- c("British Council", "YouTube")
-trends <-  gtrends(keywords, gprop =channel,geo=country, time = time )
-youtube_SL <- trends$interest_over_time
-write.csv(youtube_SL, here::here("Paper_online_Learning_Dec", "data", "youtube_SL.csv"))
-
+write.csv(youtube_world, here::here( "data", "youtube_world.csv"))
 
 
 ## ---- Self_directed_learning_analysis
@@ -1118,7 +867,7 @@ keywords= c("ABRA", "British Council", "Byju’s", "Code It",
             "Mindspark", "Mosoteach", "Music Crab", "OneCourse",
             "Polyup", "Quizlet", "SDG Academy Library", "Siyavula",
             "Smart History", "youtube")
-data_world <- read.csv( here::here("Paper_online_Learning_Dec", "data", "Self_directed_learning_world.csv"))
+data_world <- read.csv( here::here( "data", "Self_directed_learning_world.csv"))
 
 hits1<- ifelse(data_world$hits ==  "<1", 0, data_world$hits)
 data_world$hits <- as.numeric(hits1)
@@ -1132,44 +881,14 @@ dataW <- data_world %>%
   select(date, keyword, hits) %>%
   mutate(keyword = factor(keyword, levels = keyword_ord))
 dataW$date = as.Date(dataW$date, "%Y-%m-%d")
-p1 <- dataW %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.1, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("All")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
-
-
-
-data_SL <- read.csv(here::here("Paper_online_Learning_Dec", "data", "Self_directed_learning_SL.csv"))
-
-  keyword_ord<- data_SL %>% 
-    group_by(keyword) %>%
-    summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-    arrange(total_hits) %>% select(keyword) %>% as_vector()
-  
-  
-  dataSL <- data_SL %>%
-    select(date, keyword, hits) %>%
-    mutate(keyword = factor(keyword, levels = keyword_ord))
-  dataSL$date = as.Date(dataSL$date, "%Y-%m-%d")
-    p2 <- dataSL %>% 
-    ggplot(aes(x=date,y=keyword,fill=hits))+
-    geom_tile(size=0.4, colour = "grey50")+
-    scale_y_discrete(expand=c(0,0))+
-    ggtitle("Sri Lanka")+
-    labs(x="",y="")+
-    scale_fill_viridis()+
-    theme(panel.grid = element_blank(), text = element_text(size = 16))
-  
-  
-  #p<- gridExtra::grid.arrange(p1,p2, ncol=1)
-  p<- ggarrange(p1,p2, ncol=1, common.legend = TRUE, legend="bottom", align = "hv")
-  print(p)
-
-## Note: Add youtube analysis as well
+p5 <-  dataW %>% as_tibble() %>%
+  distinct(date, keyword, .keep_all = TRUE) %>%
+  as_tsibble(index= date, key = keyword) %>% 
+  autoplot(hits, size= 1) +
+  theme(legend.position = "bottom" ,  text = element_text(size = fontsize), legend.title = element_blank(), legend.text = element_text(size = fontsize))+
+  #scale_colour_viridis_d(guide = "colourbar", direction = -1) + 
+  scale_colour_discrete(guide = "colourbar") + 
+  labs(subtitle ="(e) Self-directed learning content")
 
 ## ---- Mobile_reading_data_download
 keywords= c("African Storybook", "Global Digital Library", "Reads", 
@@ -1187,26 +906,13 @@ trends21 <-trends2 %>%  filter(keyword != "Reads")
 data_world <- bind_rows(trends1, trends21)
 write.csv(data_world, here::here("Paper_online_Learning_Dec", "data", "Mobile_reading_world.csv"))
 
-## download SL data
-# Reads is the  highest as of 15-08-2021
-keywords1 <- c("African Storybook", "Global Digital Library", "Reads", 
-               "Room to Read", "StoryWeaver")
-trends1 <-  gtrends(keywords1, gprop =channel,geo=country, time = time )
-trends1 <- trends1$interest_over_time
-keywords2 <- c("Reads", "Worldreader")
-trends2 <-  gtrends(keywords2, gprop =channel, geo=country, time = time )
-trends2 <- trends2$interest_over_time
-trends21 <-trends2 %>%  filter(keyword != "Reads")
-data_SL <- bind_rows(trends1, trends21)
-write.csv(data_SL, here::here("Paper_online_Learning_Dec", "data", "Mobile_reading_SL.csv"))
-
 
 
 ## ---- Mobile_reading_analysis
 keywords= c("African Storybook", "Global Digital Library", "Reads", 
             "Room to Read", "StoryWeaver", "Worldreader")
 
-data_world <- read.csv( here::here("Paper_online_Learning_Dec", "data", "Mobile_reading_world.csv"))
+data_world <- read.csv( here::here( "data", "Mobile_reading_world.csv"))
 
 hits1<- ifelse(data_world$hits ==  "<1", 0, data_world$hits)
 data_world$hits <- as.numeric(hits1)
@@ -1220,44 +926,14 @@ dataW <- data_world %>%
   select(date, keyword, hits) %>%
   mutate(keyword = factor(keyword, levels = keyword_ord))
 dataW$date = as.Date(dataW$date, "%Y-%m-%d")
-p1 <- dataW %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.1, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("All")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
-
-
-
-data_SL <- read.csv(here::here("Paper_online_Learning_Dec", "data", "Mobile_reading_SL.csv"))
-
-  keyword_ord<- data_SL %>% 
-    group_by(keyword) %>%
-    summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-    arrange(total_hits) %>% select(keyword) %>% as_vector()
-  
-  
-  dataSL <- data_SL %>%
-    select(date, keyword, hits) %>%
-    mutate(keyword = factor(keyword, levels = keyword_ord))
-  dataSL$date = as.Date(dataSL$date, "%Y-%m-%d")
-  p2 <- dataSL %>% 
-    ggplot(aes(x=date,y=keyword,fill=hits))+
-    geom_tile(size=0.4, colour = "grey50")+
-    scale_y_discrete(expand=c(0,0))+
-    ggtitle("Sri Lanka")+
-    labs(x="",y="")+
-    scale_fill_viridis()+
-    theme(panel.grid = element_blank(), text = element_text(size = 16))
-  
-  
-  #p<- gridExtra::grid.arrange(p1,p2, ncol=1)
-  p<- ggarrange(p1,p2, ncol=1, common.legend = TRUE, legend="bottom", align = "hv")
-  print(p)
-
-
+p6 <-  dataW %>% as_tibble() %>%
+  distinct(date, keyword, .keep_all = TRUE) %>%
+  as_tsibble(index= date, key = keyword) %>% 
+  autoplot(hits, size= 1) +
+  theme(legend.position = "bottom",  text = element_text(size = fontsize), legend.title = element_blank(), legend.text = element_text(size = fontsize))+
+  #scale_colour_viridis_d(guide = "colourbar", direction = -1) + 
+  scale_colour_discrete(guide = "colourbar") + 
+  labs(subtitle ="(f) Mobile reading applications")
 
 
 
@@ -1279,82 +955,7 @@ trends1$hits <- as.numeric( trends1$hits)
 trends21$hits <- as.numeric( trends21$hits)
 
 data_world <- bind_rows(trends1, trends21)
-write.csv(data_world, here::here("Paper_online_Learning_Dec", "data", "Collaboration_platforms_world.csv"))
-
-
-#### sri lanka data
-
-keywords= c("Zoom", "Dingtalk", "Lark", "Hangouts Meet",
-            "Teams", "Skype", "WhatsApp")
-
-# WhatsApp is the  highest search in Sri Lanka as of 15-08-2021
-keywords1 <- c("Zoom", "Dingtalk", "Lark", "Hangouts Meet", "WhatsApp")
-trends1 <-  gtrends(keywords1, gprop =channel,geo=country, time = time )
-trends1 <- trends1$interest_over_time
-keywords2 <- c("Teams", "Skype", "WhatsApp")
-trends2 <-  gtrends(keywords2, gprop =channel, geo=country,time = time )
-trends2 <- trends2$interest_over_time
-trends21 <-trends2 %>%  filter(keyword != "WhatsApp")
-data_SL <- bind_rows(trends1, trends21)
-write.csv(data_SL, here::here("Paper_online_Learning_Dec", "data", "Collaboration_platforms_SL.csv"))
-
-
-
-## ---- Collaboration_platforms_analysis
-keywords= c("Zoom", "Dingtalk", "Lark", "Hangouts Meet",
-            "Teams", "Skype", "WhatsApp")
-data_world <- read.csv( here::here("Paper_online_Learning_Dec", "data", "Collaboration_platforms_world.csv"))
-
-keyword_ord<- data_world %>% 
-  group_by(keyword) %>%
-  summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-  arrange(total_hits) %>% select(keyword) %>% as_vector()
-
-dataW <- data_world %>%
-  select(date, keyword, hits) %>%
-  mutate(keyword = factor(keyword, levels = keyword_ord))
-dataW$date = as.Date(dataW$date, "%Y-%m-%d")
-p1 <- dataW %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.1, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("All")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
-
-
-
-data_SL <- read.csv(here::here("Paper_online_Learning_Dec", "data", "Collaboration_platforms_SL.csv"))
-hits1<- ifelse(data_SL$hits ==  "<1", 0, data_SL$hits)
-data_SL$hits <- as.numeric(hits1)
-
-  keyword_ord<- data_SL %>% 
-    group_by(keyword) %>%
-    summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-    arrange(total_hits) %>% select(keyword) %>% as_vector()
-  
-  
-  dataSL <- data_SL %>%
-    select(date, keyword, hits) %>%
-    mutate(keyword = factor(keyword, levels = keyword_ord))
-  dataSL$date = as.Date(dataSL$date, "%Y-%m-%d")
-  p2 <- dataSL %>% 
-    ggplot(aes(x=date,y=keyword,fill=hits))+
-    geom_tile(size=0.4, colour = "grey50")+
-    scale_y_discrete(expand=c(0,0))+
-    ggtitle("Sri Lanka")+
-    labs(x="",y="")+
-    scale_fill_viridis()+
-    theme(panel.grid = element_blank(), text = element_text(size = 16))
-  
-  
-  #p<- gridExtra::grid.arrange(p1,p2, ncol=1)
-  p<- ggarrange(p1,p2, ncol=1, common.legend = TRUE, legend="bottom", align = "hv")
-  print(p)
-
-
-
+write.csv(data_world, here::here( "data", "Collaboration_platforms_world.csv"))
 
 
 ## ---- Collaboration_platforms_eduonly_data_download 
@@ -1382,24 +983,11 @@ data_world <- bind_rows(trends1, trends21)
 write.csv(data_world, here::here("Paper_online_Learning_Dec", "data", "edu_only_Collaboration_platforms_world.csv"))
 
 
-### SL data
-
-# WhatsApp is the  highest search in education category in Sri Lanka as of 18-01-2021
-keywords1 <- c("Zoom", "Dingtalk", "Lark", "Hangouts Meet", "WhatsApp")
-trends1 <-  gtrends(keywords1, gprop =channel,geo=country, time = time,  category = category )
-trends1 <- trends1$interest_over_time
-keywords2 <- c("Teams", "Skype", "WhatsApp")
-trends2 <-  gtrends(keywords2, gprop =channel, geo=country,time = time,  category = category )
-trends2 <- trends2$interest_over_time
-trends21 <-trends2 %>%  filter(keyword != "WhatsApp")
-data_SL <- bind_rows(trends1, trends21)
-write.csv(data_SL, here::here("Paper_online_Learning_Dec", "data", "edu_only_Collaboration_platforms_SL.csv"))
-
 
 
 ## ---- Collaboration_platforms_eduonly_analysis
 
-data_world <- read.csv( here::here("Paper_online_Learning_Dec", "data", "edu_only_Collaboration_platforms_world.csv"))
+data_world <- read.csv( here::here( "data", "edu_only_Collaboration_platforms_world.csv"))
 
 keyword_ord<- data_world %>% 
   group_by(keyword) %>%
@@ -1410,44 +998,14 @@ dataW <- data_world %>%
   select(date, keyword, hits) %>%
   mutate(keyword = factor(keyword, levels = keyword_ord))
 dataW$date = as.Date(dataW$date, "%Y-%m-%d")
-p1 <- dataW %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.1, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("All")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
-
-
-
-data_SL <- read.csv(here::here("Paper_online_Learning_Dec", "data", "edu_only_Collaboration_platforms_SL.csv"))
-
-  keyword_ord<- data_SL %>% 
-    group_by(keyword) %>%
-    summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-    arrange(total_hits) %>% select(keyword) %>% as_vector()
-  
-  
-  dataSL <- data_SL %>%
-    select(date, keyword, hits) %>%
-    mutate(keyword = factor(keyword, levels = keyword_ord))
-  
-  dataSL$date = as.Date(dataSL$date, "%Y-%m-%d")
-  p2 <- dataSL %>% 
-    ggplot(aes(x=date,y=keyword,fill=hits))+
-    geom_tile(size=0.4, colour = "grey50")+
-    scale_y_discrete(expand=c(0,0))+
-    ggtitle("Sri Lanka")+
-    labs(x="",y="")+
-    scale_fill_viridis()+
-    theme(panel.grid = element_blank(), text = element_text(size = 16))
-  
-  
-  #p<- gridExtra::grid.arrange(p1,p2, ncol=1)
-  p<- ggarrange(p1,p2, ncol=1, common.legend = TRUE, legend="bottom", align = "hv")
-  print(p)
-
+p7 <-  dataW %>% as_tibble() %>%
+  distinct(date, keyword, .keep_all = TRUE) %>%
+  as_tsibble(index= date, key = keyword) %>% 
+  autoplot(hits, size= 1) +
+  theme(legend.position = "bottom",  text = element_text(size = fontsize), legend.title = element_blank(), legend.text = element_text(size = fontsize))+
+  #scale_colour_viridis_d(guide = "colourbar", direction = -1) + 
+  scale_colour_discrete(guide = "colourbar") + 
+  labs(subtitle ="(g) Collaboration platforms that support live-video communication")
 
 
 
@@ -1466,25 +1024,11 @@ trends2 <- trends2$interest_over_time
 trends21 <-trends2 %>%  filter(keyword != "Nearpod")
 
 data_world <- bind_rows(trends1, trends21)
-write.csv(data_world, here::here("Paper_online_Learning_Dec", "data", "Tools_for_teachers_world.csv"))
-
-### SL data
-
-# Trello is the  highest search in Sri Lanka as of 15-08-2021
-keywords1 <- c("Trello", "Thinglink", "Buncee", "EdPuzzle", "EduCaixa")
-trends1 <-  gtrends(keywords1, gprop =channel, geo=country,time = time)
-trends1 <- trends1$interest_over_time
-keywords2 <- c("Kaltura", "Nearpod", "Pear Deck", "Squigl", "Trello")
-trends2 <-  gtrends(keywords2, gprop =channel,geo=country, time = time )
-trends2 <- trends2$interest_over_time
-trends21 <-trends2 %>%  filter(keyword != "Trello")
-
-data_SL <- bind_rows(trends1, trends21)
-write.csv(data_SL, here::here("Paper_online_Learning_Dec", "data", "Tools_for_teachers_SL.csv"))
+write.csv(data_world, here::here( "data", "Tools_for_teachers_world.csv"))
 
 ## ---- Tools_for_teachers_analysis
 
-data_world <- read.csv( here::here("Paper_online_Learning_Dec", "data", "Tools_for_teachers_world.csv"))
+data_world <- read.csv( here::here( "data", "Tools_for_teachers_world.csv"))
 hits1<- ifelse(data_world$hits ==  "<1", 0, data_world$hits)
 data_world$hits <- as.numeric(hits1)
 
@@ -1497,45 +1041,17 @@ dataW <- data_world %>%
   select(date, keyword, hits) %>%
   mutate(keyword = factor(keyword, levels = keyword_ord))
 dataW$date = as.Date(dataW$date, "%Y-%m-%d")
-p1 <- dataW %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.1, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("All")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
-
-
-
-data_SL <- read.csv(here::here("Paper_online_Learning_Dec", "data", "Tools_for_teachers_SL.csv"))
-
-  keyword_ord<- data_SL %>% 
-    group_by(keyword) %>%
-    summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-    arrange(total_hits) %>% select(keyword) %>% as_vector()
-  
-  
-  dataSL <- data_SL %>%
-    select(date, keyword, hits) %>%
-    mutate(keyword = factor(keyword, levels = keyword_ord))
-  dataSL$date = as.Date(dataSL$date, "%Y-%m-%d")
-  p2 <- dataSL %>% 
-    ggplot(aes(x=date,y=keyword,fill=hits))+
-    geom_tile(size=0.4, colour = "grey50")+
-    scale_y_discrete(expand=c(0,0))+
-    ggtitle("Sri Lanka")+
-    labs(x="",y="")+
-    scale_fill_viridis()+
-    theme(panel.grid = element_blank(), text = element_text(size = 16))
-  
-  
-  #p<- gridExtra::grid.arrange(p1,p2, ncol=1)
-  p<- ggarrange(p1,p2, ncol=1, common.legend = TRUE, legend="bottom",  align = "hv")
-  print(p)
-
-
-
+p8 <-  dataW %>% as_tibble() %>%
+  distinct(date, keyword, .keep_all = TRUE) %>%
+  as_tsibble(index= date, key = keyword) %>% 
+  autoplot(hits, size= 1) +
+  theme(legend.position = "bottom", 
+        text = element_text(size = fontsize),
+        legend.title = element_blank(),
+        legend.text = element_text(size = fontsize))+
+  #scale_colour_viridis_d(guide = "colourbar", direction = -1) + 
+  scale_colour_discrete(guide = "colourbar") + 
+  labs(subtitle ="(h) Tools for teachers to create of digital learning content")
 
 
 ## ---- External_repositories_DL_data_download
@@ -1564,30 +1080,7 @@ trends1$hits <- as.numeric( trends1$hits)
 trends21$hits <- as.numeric( trends21$hits)
 trends31$hits <- as.numeric( trends31$hits)
 data_world <- bind_rows(trends1, trends21, trends31)
-write.csv(data_world, here::here("Paper_online_Learning_Dec", "data", "External_repositories_DL_world.csv"))
-
-### Sri Lanka data
-# UNHCR is the  highest search  as of 18-01-2021
-keywords1 <- c("UNHCR", "Common Sense Education", "Commonweatlh of Learning",
-               "Education Nation", "EdSurge")
-trends1 <-  gtrends(keywords1, gprop =channel,geo=country, time = time)
-trends1 <- trends1$interest_over_time
-keywords2 <- c("UNHCR","Global Business Coalition for Education",
-               "Keep Learning Going", "Koulu.me", "Organisation internationale de la Francophonie")
-trends2 <-  gtrends(keywords2, gprop =channel,geo=country, time = time )
-trends2 <- trends2$interest_over_time
-keywords3 <- c("Brookings", "UNEVOC Resources", "UNHCR")
-trends3 <-  gtrends(keywords3, gprop =channel,geo=country, time = time )
-trends3 <- trends3$interest_over_time
-trends21 <-trends2 %>%  filter(keyword != "UNHCR")
-trends31 <-trends3 %>%  filter(keyword != "UNHCR")
-trends1$hits <- as.numeric( trends1$hits)
-trends21$hits <- as.numeric( trends21$hits)
-trends31$hits <- as.numeric( trends31$hits)
-data_SL <- bind_rows(trends1, trends21, trends31)
-write.csv(data_SL, here::here("Paper_online_Learning_Dec", "data", "External_repositories_DL_SL.csv"))
-
-
+write.csv(data_world, here::here("data", "External_repositories_DL_world.csv"))
 
 ## ---- External_repositories_DL_analysis
 keywords= c("Brookings", "Common Sense Education", "Commonweatlh of Learning",
@@ -1595,7 +1088,7 @@ keywords= c("Brookings", "Common Sense Education", "Commonweatlh of Learning",
             "Keep Learning Going", "Koulu.me", "Organisation internationale de la Francophonie",
             "UNEVOC Resources", "UNHCR")
 
-data_world <- read.csv( here::here("Paper_online_Learning_Dec", "data", "External_repositories_DL_world.csv"))
+data_world <- read.csv( here::here( "data", "External_repositories_DL_world.csv"))
 
 keyword_ord<- data_world %>% 
   group_by(keyword) %>%
@@ -1606,43 +1099,17 @@ dataW <- data_world %>%
   select(date, keyword, hits) %>%
   mutate(keyword = factor(keyword, levels = keyword_ord))
 dataW$date = as.Date(dataW$date, "%Y-%m-%d")
-p1 <- dataW %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.1, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("All")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
-
-
-
-data_SL <- read.csv(here::here("Paper_online_Learning_Dec", "data", "External_repositories_DL_SL.csv"))
-
-  keyword_ord<- data_SL %>% 
-    group_by(keyword) %>%
-    summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-    arrange(total_hits) %>% select(keyword) %>% as_vector()
-  
-  
-  dataSL <- data_SL %>%
-    select(date, keyword, hits) %>%
-    mutate(keyword = factor(keyword, levels = keyword_ord))
-  dataSL$date = as.Date(dataSL$date, "%Y-%m-%d")
-  
-  p2 <- dataSL %>% 
-    ggplot(aes(x=date,y=keyword,fill=hits))+
-    geom_tile(size=0.4, colour = "grey50")+
-    scale_y_discrete(expand=c(0,0))+
-    ggtitle("Sri Lanka")+
-    labs(x="",y="")+
-    scale_fill_viridis()+
-    theme(panel.grid = element_blank(), text = element_text(size = 16))
-  
-  
-  #p<- gridExtra::grid.arrange(p1,p2, ncol=1)
-  p<- ggarrange(p1,p2, ncol=1, common.legend = TRUE, legend="bottom", align = "hv")
-  print(p)
+p9 <-  dataW %>% as_tibble() %>%
+  distinct(date, keyword, .keep_all = TRUE) %>%
+  as_tsibble(index= date, key = keyword) %>% 
+  autoplot(hits, size= 1) +
+  theme(legend.position = "bottom", 
+        text = element_text(size = fontsize), 
+        legend.title = element_blank(), 
+        legend.text = element_text(size = 7))+
+ # scale_colour_viridis_d(guide = "colourbar", direction = -1) + 
+  scale_colour_discrete(guide = "colourbar") + 
+  labs(subtitle ="(i) External repositories of distance learning solutions")
 
 
 
@@ -1656,23 +1123,12 @@ category <- categories[categories$name=="Education",2] %>% as.numeric()
 trends <- gtrends(keywords, gprop =channel, time = time, category = category )
 data_world_edu <- trends$interest_over_time
 data_world <- bind_rows(data_world_all, data_world_edu )
-write.csv(data_world, here::here("Paper_online_Learning_Dec", "data", "psychosocial_support_world.csv"))
-
-
-
-trends <- gtrends(keywords, gprop =channel, time = time, geo=country)
-data_SL_all <- trends$interest_over_time
-category <- categories[categories$name=="Education",2] %>% as.numeric()
-trends <- gtrends(keywords, gprop =channel, time = time, category = category ,geo=country)
-data_SL_edu <- trends$interest_over_time
-data_SL <- bind_rows(data_SL_all, data_SL_edu )
-write.csv(data_SL, here::here("Paper_online_Learning_Dec", "data", "psychosocial_support_SL.csv"))
-
+write.csv(data_world, here::here( "data", "psychosocial_support_world.csv"))
 
 
 ## ---- psychosocial_support_analysis
 keywords <- c("psychosocial support")
-data_world <- read.csv( here::here("Paper_online_Learning_Dec", "data", "psychosocial_support_world.csv"))
+data_world <- read.csv( here::here( "data", "psychosocial_support_world.csv"))
 
 dataW <- data_world %>%
   select(date, category, hits) %>%
@@ -1753,33 +1209,6 @@ data_world <- bind_rows(trends1, trends21, trends31, trends41)
 write.csv(data_world, here::here("Paper_online_Learning_Dec", "data", "Online_proctoring_world.csv"))
 
 
-### SL data
-# Pearson VUE is the  highest search  in Sri Lanka as of 15-08-2021
-keywords1 <- c("Pearson VUE", "Mettl", "Examus", "ProctorU", 
-               "Examity")
-trends1 <-  gtrends(keywords1, gprop =channel,geo=country, time = time)
-trends1 <- trends1$interest_over_time
-keywords2 <- c("Pearson VUE","Verificient", "AIProctor",
-               "ExamSoft", "Proview")
-trends2 <-  gtrends(keywords2, gprop =channel,geo=country, time = time )
-trends2 <- trends2$interest_over_time
-keywords3 <- c("Pearson VUE", "Conduct Exam", "ProctorExam", 
-               "PSI Bridge", "MeritTrac")
-trends3 <-  gtrends(keywords3, gprop =channel,geo=country, time = time )
-trends3 <- trends3$interest_over_time
-keywords4 <- c("Pearson VUE", "Honorlock", "Proctortrack", "Proctorio",
-               "Talview")
-trends4 <-  gtrends(keywords4, gprop =channel,geo=country, time = time )
-trends4 <- trends4$interest_over_time
-trends21 <-trends2 %>%  filter(keyword != "Pearson VUE")
-trends31 <-trends3 %>%  filter(keyword != "Pearson VUE")
-trends41 <-trends4 %>%  filter(keyword != "Pearson VUE")
-trends1$hits <- as.numeric( trends1$hits)
-trends21$hits <- as.numeric( trends21$hits)
-trends31$hits <- as.numeric( trends31$hits)
-trends41$hits <- as.numeric( trends41$hits)
-data_SL <- bind_rows(trends1, trends21, trends31, trends41)
-write.csv(data_SL, here::here("Paper_online_Learning_Dec", "data", "Online_proctoring_SL.csv"))
 
 
 ## ---- Online_proctoring_analysis
@@ -1789,7 +1218,7 @@ keywords= c("Mettl", "Examus", "ProctorU", "Examity", "Verificient",
             "MeritTrac", "Honorlock", "Proctortrack", "Proctorio",
             "Talview")
 
-data_world <- read.csv( here::here("Paper_online_Learning_Dec", "data", "Online_proctoring_world.csv"))
+data_world <- read.csv( here::here( "data", "Online_proctoring_world.csv"))
 
 keyword_ord<- data_world %>% 
   group_by(keyword) %>%
@@ -1800,45 +1229,30 @@ dataW <- data_world %>%
   select(date, keyword, hits) %>%
   mutate(keyword = factor(keyword, levels = keyword_ord))
 dataW$date = as.Date(dataW$date, "%Y-%m-%d")
-p1 <- dataW %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.1, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("All")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
+p10 <-  dataW %>% as_tibble() %>%
+  distinct(date, keyword, .keep_all = TRUE) %>%
+  as_tsibble(index= date, key = keyword) %>%
+  autoplot(hits, size= 1) +
+  theme(legend.position = "bottom",  text = element_text(size = fontsize), legend.title = element_blank(), legend.text = element_text(size = fontsize))+
+  #scale_colour_viridis_d(guide = "colourbar", direction = -1) + 
+  scale_colour_discrete(guide = "colourbar") + 
+  labs(subtitle ="(j) Tools for online proctoring")
 
-
-
-data_SL <- read.csv(here::here("Paper_online_Learning_Dec", "data", "Online_proctoring_SL.csv"))
-
-keyword_ord<- data_SL %>% 
-  group_by(keyword) %>%
-  summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-  arrange(total_hits) %>% select(keyword) %>% as_vector()
-
-
-dataSL <- data_SL %>%
-  select(date, keyword, hits) %>%
-  mutate(keyword = factor(keyword, levels = keyword_ord))
-dataSL$date = as.Date(dataSL$date, "%Y-%m-%d")
-
-p2 <- dataSL %>% 
-  ggplot(aes(x=date,y=keyword,fill=hits))+
-  geom_tile(size=0.4, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("Sri Lanka")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
-
-
-#p<- gridExtra::grid.arrange(p1,p2, ncol=1)
-p<- ggarrange(p1,p2, ncol=1, common.legend = TRUE, legend="bottom", align = "hv")
+## ---- plot1
+p <- (p1)/
+  (p2) /
+  (p3) /
+  (p4) /
+  (p5)
 print(p)
 
-
+## ---- plot2
+p <- (p6)/
+  (p7) /
+  (p8) /
+  (p9) /
+  (p10)
+print(p)
 
 
 
@@ -1905,157 +1319,6 @@ channel='web'
 trends_dis_edu <- gtrends(keywords, gprop =channel,geo=country, time = time, category = category )
 
 
-## ---- Synchrony_between_ts
-# Covid cases
-covidcasesW <- read.csv(here::here("Paper_online_Learning_Dec", "data", "covid_cases.csv"))
-covidcasesW <- covidcasesW %>% select(-X)
-
-## covid search google trends
-data_covid <- read.csv( here::here("Paper_online_Learning_Dec", "data", "covid_search_world.csv"))
-hits1<- ifelse(data_covid$hits ==  "<1", 0, data_covid$hits)
-data_covid$hits <- as.numeric(hits1)
-# covid search google trends - arrange in wide format
-covid_search <- data_covid %>%
-  select(date, hits, keyword) %>%
-  pivot_wider(names_from = keyword, values_from = hits)
-
-## online learning google trends
-data_world <- read.csv( here::here("Paper_online_Learning_Dec", "data", "education_search_world.csv"))
-# hits is a character variable. Convert hits into a numeric variable
-hits1<- ifelse(data_world$hits ==  "<1", 0, data_world$hits)
-data_world$hits <- as.numeric(hits1)
-# arrange in wide format
-edu_search <- data_world %>%
-  select(date, hits, keyword) %>%
-  pivot_wider(names_from = keyword, values_from = hits)
-
-## Time Lagged Cross Correlation 
-library(fpp3)
-data <- full_join(covid_search, edu_search,  by = "date" ) %>%
-  mutate(date = as.Date(date)) %>%
-  as_tsibble(index = date)
-
-
-p1 <- data %>% 
-  mutate(diff_corona = difference(corona),
-         diff_online = difference(`Online Learning`)) %>%
- CCF(diff_corona, diff_online ) %>%
- autoplot()+
-  labs(title= "corona with online learning")
-
-p2 <- data %>% 
-  mutate(diff_corona = difference(corona),
-         diff_dist = difference(`Distance learning`)) %>%
-  CCF(diff_corona, diff_dist ) %>%
-  autoplot()+
-  labs(title= "corona with Distance learning")
-
-p3 <- data %>% 
-  mutate(diff_corona = difference(corona),
-         diff_teach = difference(`Online teaching`)) %>%
-  CCF(diff_corona, diff_teach ) %>%
-  autoplot()+
-  labs(title= "corona with Online teaching")
-
-p4 <- data %>% 
-  mutate(diff_corona = difference(corona),
-         diff_edu = difference(`Distance education`)) %>%
-  CCF(diff_corona, diff_edu ) %>%
-  autoplot()+
-  labs(title= "corona with Distance education")
-
-p5 <- data %>% 
-  mutate(diff_corona = difference(corona),
-         diff_proc = difference(`online proctoring`)) %>%
-  CCF(diff_corona, diff_proc ) %>%
-  autoplot()+
-  labs(title= "corona with online proctoring")
-
-
-
-pa <- data %>% 
-  mutate(diff_corona = difference(`covid 19`),
-         diff_online = difference(`Online Learning`)) %>%
-  CCF(diff_corona, diff_online ) %>%
-  autoplot()+
-  labs(title= "covid 19 with online learning")
-
-pb <- data %>% 
-  mutate(diff_corona = difference(`covid 19`),
-         diff_dist = difference(`Distance learning`)) %>%
-  CCF(diff_corona, diff_dist ) %>%
-  autoplot()+
-  labs(title= "covid 19 with Distance learning")
-
-pc <- data %>% 
-  mutate(diff_corona = difference(`covid 19`),
-         diff_teach = difference(`Online teaching`)) %>%
-  CCF(diff_corona, diff_teach ) %>%
-  autoplot()+
-  labs(title= "covid 19 with Online teaching")
-
-pd <- data %>% 
-  mutate(diff_corona = difference(`covid 19`),
-         diff_edu = difference(`Distance education`)) %>%
-  CCF(diff_corona, diff_edu ) %>%
-  autoplot()+
-  labs(title= "covid 19 with Distance education")
-
-pe <- data %>% 
-  mutate(diff_corona = difference(`covid 19`),
-         diff_proc = difference(`online proctoring`)) %>%
-  CCF(diff_corona, diff_proc ) %>%
-  autoplot()+
-  labs(title= "covid 19 with online proctoring")
-
-
-(p1 | pa ) / 
-  (p2 | pb )/
-  (p3 | pc )/
-  (p4 | pd )/
-  (p5 | pe )
-
-## ---- dtw
-
-# Covid cases
-covidcasesW <- read.csv(here::here("Paper_online_Learning_Dec", "data", "covid_cases.csv"))
-covidcasesW <- covidcasesW %>% select(-X)
-
-## covid search google trends
-data_covid <- read.csv( here::here("Paper_online_Learning_Dec", "data", "covid_search_world.csv"))
-hits1<- ifelse(data_covid$hits ==  "<1", 0, data_covid$hits)
-data_covid$hits <- as.numeric(hits1)
-# covid search google trends - arrange in wide format
-covid_search <- data_covid %>%
-  select(date, hits, keyword) %>%
-  pivot_wider(names_from = keyword, values_from = hits)
-
-## online learning google trends
-data_world <- read.csv( here::here("Paper_online_Learning_Dec", "data", "education_search_world.csv"))
-# hits is a character variable. Convert hits into a numeric variable
-hits1<- ifelse(data_world$hits ==  "<1", 0, data_world$hits)
-data_world$hits <- as.numeric(hits1)
-# arrange in wide format
-edu_search <- data_world %>%
-  select(date, hits, keyword) %>%
-  pivot_wider(names_from = keyword, values_from = hits)
-
-## Time Lagged Cross Correlation 
-library(fpp3)
-data <- full_join(covid_search, edu_search,  by = "date" ) %>%
-  mutate(date = as.Date(date)) %>%
-  as_tsibble(index = date)
-
-library(dtw)
-x<- scale(data$`Online Learning`)
-y<- scale(data$corona)
-#align <- dtw(data$`Online Learning`, data$corona, keep = T)
-align <- dtw(x[,1], y[,1], keep = T)
-#align <- dtw( data$corona, (data$corona + rnorm(163)), keep = T)
-p1 <- dtwPlotTwoWay(align)
-p2 <- dtwPlotDensity(align, normalize = TRUE)
-p3<- dtwPlotThreeWay(align)
-#align$distance
 
 
 ## ---- delete
