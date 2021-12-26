@@ -1113,7 +1113,7 @@ data_world <- bind_rows(data_world_all, data_world_edu )
 write.csv(data_world, here::here( "data", "psychosocial_support_world.csv"))
 
 
-## ---- psychosocialSupportAnalysis
+## ---- psychosocialSupport
 keywords <- c("psychosocial support")
 data_world <- read.csv( here::here( "data", "psychosocial_support_world.csv"))
 
@@ -1121,24 +1121,15 @@ dataW <- data_world %>%
   select(date, category, hits) %>%
   mutate(category = factor(category, levels = c(0, 74), labels = c("All", "Education")))
 dataW$date = as.Date(dataW$date, "%Y-%m-%d")
-p1 <- dataW %>% 
-  ggplot(aes(x=date,y=category,fill=hits))+
-  geom_tile(size=0.1, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("All")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
 
-
-p11 <- dataW %>%
+p1 <- dataW %>%
   as_tsibble(index= date, key = category) %>%
   autoplot(hits, size= 1) +
   theme(legend.position = "bottom",  
         text = element_text(size = 12), 
         legend.title = element_blank(), 
         legend.text = element_text(size = 12))+
-  scale_colour_viridis_d(guide = "colourbar", direction = -1, end = 0.6) 
-
-print(p11)
+  scale_colour_viridis_d(guide = "colourbar",
+                         direction = -1, end = 0.6) 
+print(p1)
 

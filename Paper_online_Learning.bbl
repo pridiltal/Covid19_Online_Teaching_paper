@@ -380,6 +380,82 @@
       \field{pages}{91\bibrangedash 103}
       \range{pages}{13}
     \endentry
+    \entry{ciotti2019covid}{article}{}
+      \name{author}{10}{}{%
+        {{hash=591213e1f6dfdca48084402624664597}{%
+           family={Ciotti},
+           familyi={C\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+        {{hash=81d064bfb4e0fe200ff0a29d8ba411fe}{%
+           family={Angeletti},
+           familyi={A\bibinitperiod},
+           given={Silvia},
+           giveni={S\bibinitperiod}}}%
+        {{hash=63fb44bd03222507a361971611160b6e}{%
+           family={Minieri},
+           familyi={M\bibinitperiod},
+           given={Marilena},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8b55d5db040d6b678cab677239906a17}{%
+           family={Giovannetti},
+           familyi={G\bibinitperiod},
+           given={Marta},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d6c694cbce92c97f754b054e0cd85cc9}{%
+           family={Benvenuto},
+           familyi={B\bibinitperiod},
+           given={Domenico},
+           giveni={D\bibinitperiod}}}%
+        {{hash=386b59cf7e5224fbd02bcc1fa623bbcb}{%
+           family={Pascarella},
+           familyi={P\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4d6cb8c244ff322a01826a850f5be11f}{%
+           family={Sagnelli},
+           familyi={S\bibinitperiod},
+           given={Caterina},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6a74ffe3c4f90b8e8b9e8002d3748b6b}{%
+           family={Bianchi},
+           familyi={B\bibinitperiod},
+           given={Martina},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e1a7d744367ddddb7f9b6ee0275f7bbd}{%
+           family={Bernardini},
+           familyi={B\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod}}}%
+        {{hash=533b31fabafdfa31f32ecd6a23882155}{%
+           family={Ciccozzi},
+           familyi={C\bibinitperiod},
+           given={Massimo},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Karger Publishers}%
+      }
+      \strng{namehash}{ff7bccbe23fc8fdd99eefdaa2bfca71f}
+      \strng{fullhash}{6bc67e9dd618f65b5d1c2b57bbc9827f}
+      \strng{bibnamehash}{6bc67e9dd618f65b5d1c2b57bbc9827f}
+      \strng{authorbibnamehash}{6bc67e9dd618f65b5d1c2b57bbc9827f}
+      \strng{authornamehash}{ff7bccbe23fc8fdd99eefdaa2bfca71f}
+      \strng{authorfullhash}{6bc67e9dd618f65b5d1c2b57bbc9827f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Chemotherapy}
+      \field{number}{5-6}
+      \field{title}{COVID-19 outbreak: an overview}
+      \field{volume}{64}
+      \field{year}{2019}
+      \field{pages}{215\bibrangedash 223}
+      \range{pages}{9}
+    \endentry
     \entry{conrad2002deep}{article}{}
       \name{author}{1}{}{%
         {{hash=d0d3a8ef1a48a5946369f0f87eccdd8f}{%
