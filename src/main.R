@@ -451,39 +451,39 @@ p5 <- data %>%
 
 
 pa <- data %>% 
-  mutate(diff_corona = difference(`covid 19`),
+  mutate(diff_corona = difference(covid),
          diff_online = difference(`Online Learning`)) %>%
   CCF(diff_corona, diff_online ) %>%
   autoplot()+
-  labs(title= "(f) 'Covid 19' with 'Online learning")
+  labs(title= "(f) 'Covid' with 'Online learning")
 
 pb <- data %>% 
-  mutate(diff_corona = difference(`covid 19`),
+  mutate(diff_corona = difference(covid),
          diff_dist = difference(`Distance learning`)) %>%
   CCF(diff_corona, diff_dist ) %>%
   autoplot()+
-  labs(title= "(g) 'Covid 19' with 'Distance learning'")
+  labs(title= "(g) 'Covid' with 'Distance learning'")
 
 pc <- data %>% 
-  mutate(diff_corona = difference(`covid 19`),
+  mutate(diff_corona = difference(covid),
          diff_teach = difference(`Online teaching`)) %>%
   CCF(diff_corona, diff_teach ) %>%
   autoplot()+
-  labs(title= "(h) 'Covid 19' with 'Online teaching'")
+  labs(title= "(h) 'Covid' with 'Online teaching'")
 
 pd <- data %>% 
-  mutate(diff_corona = difference(`covid 19`),
+  mutate(diff_corona = difference(covid),
          diff_edu = difference(`Distance education`)) %>%
   CCF(diff_corona, diff_edu ) %>%
   autoplot()+
-  labs(title= "(i) 'Covid 19' with 'Distance education'")
+  labs(title= "(i) 'Covid' with 'Distance education'")
 
 pe <- data %>% 
-  mutate(diff_corona = difference(`covid 19`),
+  mutate(diff_corona = difference(covid),
          diff_proc = difference(`online proctoring`)) %>%
   CCF(diff_corona, diff_proc ) %>%
   autoplot()+
-  labs(title= "(j) 'Covid 19' with 'Online proctoring'")
+  labs(title= "(j) 'Covid' with 'Online proctoring'")
 
 
 (p1 | pa ) / 
@@ -675,7 +675,7 @@ keywords= c("Cell-Ed", "Eneza Education", "Funzi",
 keywords1 <- c("Ubongo", "Cell-Ed", "Eneza Education", "Funzi", "Ubongo")
 trends1 <-  gtrends(keywords1, gprop =channel, time = time )
 trends1 <- trends1$interest_over_time
-keywords2 <- c("Ubongo", "Ustad Mobile")
+keywords2 <- c("Ubongo", "Ustad Mobile", "KaiOS")
 trends2 <-  gtrends(keywords2, gprop =channel, 
                     time = time )
 trends2 <- trends2$interest_over_time
@@ -690,15 +690,15 @@ write.csv(data_world,
 
 
 ## ---- mobile_phones_apps_analysis
-keywords= c("Cell-Ed", "Eneza Education", "Funzi", "KaiOS", "Ubongo", 
-            "Ustad Mobile")
+keywords= c("Cell-Ed", "Eneza Education", "Funzi", 
+            "KaiOS", "Ubongo", "Ustad Mobile")
 data_world <- read.csv( here::here("data", "mobile_phones_apps_world.csv"))
-
 
 keyword_ord<- data_world %>% 
   group_by(keyword) %>%
   summarise(total_hits = sum(hits, na.rm = TRUE)) %>%
-  arrange(total_hits) %>% select(keyword) %>% as_vector()
+  arrange(total_hits) %>% 
+  select(keyword) %>% as_vector()
 
 dataW <- data_world %>%
   select(date, keyword, hits) %>%
@@ -1111,68 +1111,6 @@ p9 <-  dataW %>% as_tibble() %>%
   scale_colour_discrete(guide = "colourbar") + 
   labs(subtitle ="(i) External repositories of distance learning solutions")
 
-
-
-## ---- psychosocial_support_data_download
-
-keywords <- c("psychosocial support")
-
-trends <- gtrends(keywords, gprop =channel, time = time)
-data_world_all <- trends$interest_over_time
-category <- categories[categories$name=="Education",2] %>% as.numeric()
-trends <- gtrends(keywords, gprop =channel, time = time, category = category )
-data_world_edu <- trends$interest_over_time
-data_world <- bind_rows(data_world_all, data_world_edu )
-write.csv(data_world, here::here( "data", "psychosocial_support_world.csv"))
-
-
-## ---- psychosocial_support_analysis
-keywords <- c("psychosocial support")
-data_world <- read.csv( here::here( "data", "psychosocial_support_world.csv"))
-
-dataW <- data_world %>%
-  select(date, category, hits) %>%
-  mutate(category = factor(category, levels = c(0, 74), labels = c("All", "Education")))
-dataW$date = as.Date(dataW$date, "%Y-%m-%d")
-p1 <- dataW %>% 
-  ggplot(aes(x=date,y=category,fill=hits))+
-  geom_tile(size=0.1, colour = "grey50")+
-  scale_y_discrete(expand=c(0,0))+
-  ggtitle("All")+
-  labs(x="",y="")+
-  scale_fill_viridis()+
-  theme(panel.grid = element_blank(), text = element_text(size = 16))
-
-
-
-data_SL <- read_csv(here::here("Paper_online_Learning_Dec", "data", "psychosocial_support_SL.csv"))
-
-if(nrow(data_SL) == 0)
-{
-  print(p1)
-} else{
-  dataSL <- data_SL %>%
-    select(date, category, hits) %>%
-    mutate(category = factor(category, levels = c(0, 74), labels = c("All", "Education")))
-  p2 <- dataSL %>% 
-    ggplot(aes(x=date,y=category,fill=hits))+
-    geom_tile(size=0.4, colour = "grey50")+
-    scale_y_discrete(expand=c(0,0))+
-    scale_x_discrete(expand=c(0,0),
-                     breaks=c("2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01"))+
-    ggtitle("Sri Lanka")+
-    labs(x="",y="")+
-    scale_fill_viridis()+
-    theme(panel.grid = element_blank(), text = element_text(size = 16))
-  
-  
-  #p<- gridExtra::grid.arrange(p1,p2, ncol=1)
-  p<- ggarrange(p1,p2, ncol=1, common.legend = TRUE, legend="bottom", align = "hv")
-  print(p)
-}
-
-
-
 ## ---- Online_proctoring_data_download
 # source : https://www.softwaresuggest.com/blog/best-online-exam-proctoring-software/#7_ExamSoft
 # source 2: https://blog.mettl.com/top-5-proctoring-solution-providers/
@@ -1255,6 +1193,48 @@ p <- (p6)/
 print(p)
 
 
+
+## ---- psychosocial_support_data_download
+
+keywords <- c("psychosocial support")
+
+trends <- gtrends(keywords, gprop =channel, time = time)
+data_world_all <- trends$interest_over_time
+category <- categories[categories$name=="Education",2] %>% as.numeric()
+trends <- gtrends(keywords, gprop =channel, time = time, category = category )
+data_world_edu <- trends$interest_over_time
+data_world <- bind_rows(data_world_all, data_world_edu )
+write.csv(data_world, here::here( "data", "psychosocial_support_world.csv"))
+
+
+## ---- psychosocialSupportAnalysis
+keywords <- c("psychosocial support")
+data_world <- read.csv( here::here( "data", "psychosocial_support_world.csv"))
+
+dataW <- data_world %>%
+  select(date, category, hits) %>%
+  mutate(category = factor(category, levels = c(0, 74), labels = c("All", "Education")))
+dataW$date = as.Date(dataW$date, "%Y-%m-%d")
+p1 <- dataW %>% 
+  ggplot(aes(x=date,y=category,fill=hits))+
+  geom_tile(size=0.1, colour = "grey50")+
+  scale_y_discrete(expand=c(0,0))+
+  ggtitle("All")+
+  labs(x="",y="")+
+  scale_fill_viridis()+
+  theme(panel.grid = element_blank(), text = element_text(size = 16))
+
+
+p11 <- dataW %>%
+  as_tsibble(index= date, key = category) %>%
+  autoplot(hits, size= 1) +
+  theme(legend.position = "bottom",  
+        text = element_text(size = 12), 
+        legend.title = element_blank(), 
+        legend.text = element_text(size = 12))+
+  scale_colour_viridis_d(guide = "colourbar", direction = -1, end = 0.6) 
+
+print(p11)
 
 
 ## ---- other
