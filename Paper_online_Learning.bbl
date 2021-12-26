@@ -799,6 +799,41 @@
       \field{pages}{418\bibrangedash 428}
       \range{pages}{11}
     \endentry
+    \entry{coronavirusr}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=951a5ff886e3c2b26c520ef9db6d5392}{%
+           family={Krispin},
+           familyi={K\bibinitperiod},
+           given={Rami},
+           giveni={R\bibinitperiod}}}%
+        {{hash=2e457f0044729e74016259df8c02edad}{%
+           family={Byrnes},
+           familyi={B\bibinitperiod},
+           given={Jarrett},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8e5a30cdf53516eeb7f2e9576ad568a1}
+      \strng{fullhash}{8e5a30cdf53516eeb7f2e9576ad568a1}
+      \strng{bibnamehash}{8e5a30cdf53516eeb7f2e9576ad568a1}
+      \strng{authorbibnamehash}{8e5a30cdf53516eeb7f2e9576ad568a1}
+      \strng{authornamehash}{8e5a30cdf53516eeb7f2e9576ad568a1}
+      \strng{authorfullhash}{8e5a30cdf53516eeb7f2e9576ad568a1}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{R package version 0.3.30}
+      \field{title}{coronavirus: The 2019 Novel Coronavirus COVID-19 (2019-nCoV) Dataset}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://CRAN.R-project.org/package=coronavirus
+      \endverb
+      \verb{url}
+      \verb https://CRAN.R-project.org/package=coronavirus
+      \endverb
+    \endentry
     \entry{moore2011learning}{article}{}
       \name{author}{3}{}{%
         {{hash=5aa6bbce867784b6a7b0476a73ebe345}{%
@@ -900,6 +935,39 @@
       \field{year}{2014}
       \field{pages}{e109583}
       \range{pages}{-1}
+    \endentry
+    \entry{rsoftware}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=dcdebb6b35bff7c0568bf8c50ef8626d}{%
+           family={{R Core Team}},
+           familyi={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Vienna, Austria}%
+      }
+      \list{organization}{1}{%
+        {R Foundation for Statistical Computing}%
+      }
+      \strng{namehash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{fullhash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{bibnamehash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{authorbibnamehash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{authornamehash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \strng{authorfullhash}{dcdebb6b35bff7c0568bf8c50ef8626d}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{R: A Language and Environment for Statistical Computing}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.R-project.org/
+      \endverb
+      \verb{url}
+      \verb https://www.R-project.org/
+      \endverb
     \endentry
     \entry{richmond2020critical}{misc}{}
       \name{author}{5}{}{%
@@ -1069,7 +1137,7 @@
       \verb https://en.unesco.org/covid19/educationresponse/consequences
       \endverb
     \endentry
-    \entry{unesco2020DLsolutions}{article}{}
+    \entry{unesco2020covid}{article}{}
       \name{author}{1}{}{%
         {{hash=24a0ef0a6269be289db4de9570763de3}{%
            family={UNESCO},
@@ -1085,6 +1153,36 @@
       \field{sortinit}{U}
       \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
       \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 13-May-2020]}
+      \field{title}{COVID-19 educational disruption and response}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://en.unesco.org/covid19/educationresponse
+      \endverb
+      \verb{url}
+      \verb https://en.unesco.org/covid19/educationresponse
+      \endverb
+    \endentry
+    \entry{unesco2020DLsolutions}{article}{}
+      \name{author}{1}{}{%
+        {{hash=24a0ef0a6269be289db4de9570763de3}{%
+           family={UNESCO},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{fullhash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{bibnamehash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{authorbibnamehash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{authornamehash}{24a0ef0a6269be289db4de9570763de3}
+      \strng{authorfullhash}{24a0ef0a6269be289db4de9570763de3}
+      \field{extraname}{3}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradate}{3}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}

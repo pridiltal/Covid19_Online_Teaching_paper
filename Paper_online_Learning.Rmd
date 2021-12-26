@@ -8,12 +8,12 @@ author:
   correspondingauthor: true
 - familyname: Talagala
   othernames: Thiyanga S.
-  address: Department of Statistics, University of Sri Jayewardenepura, Sri Lanka
-  email: tstalagala@gmail.com
-abstract: "A brief summary of our work"
-keywords: "rmarkdown, templates"
+  address: Department of Statistics, Faculty of Applied Sciences, University of Sri Jayewardenepura, Sri Lanka
+  email: ttalagala@sjp.ac.lk
+abstract: "Distance Education has long history. However Coid-19 has made a new era of distance education. With the increasing demand, many different distance learning solutions have been introduced for different education purposes. In this study we invetigated the impact of Covid 19 on ditance education and the possibility of using Google analytics search index series  as a proxy to quantify the  popularity and the public interest for different distance education solutions. Both visual and analytical approaches were used to  analyse web search queries at the global level during Covid-19 pandemic.This study intorduced a Google trend footprint of various ditance leraning solutions for diffrent education purposes, that can be used as a proxy for measuring global attension towards different learning solutions. The findings provide a fast first step to identify the most popular tools available for different educational purposes. R code and data are available in the online supplementary materials. "
+keywords:  "Online-learning, Distance education solutions, Covid-19 Pandemic,  Google trend search queries "
 wpnumber: 1
-jelcodes: C10,C14,C22
+jelcodes: C82,I20,I21
 blind: false
 cover: true
 toc: false
