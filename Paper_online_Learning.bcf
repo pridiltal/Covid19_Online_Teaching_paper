@@ -2423,8 +2423,6 @@
     <bcf:citekey order="64">conrad2002deep</bcf:citekey>
     <bcf:citekey order="65">giorgino2009computing</bcf:citekey>
     <bcf:citekey order="66">sudarsana2019use</bcf:citekey>
-    <bcf:citekey order="67">unesco2020covid</bcf:citekey>
-    <bcf:citekey order="67">unescoadverse2020</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
