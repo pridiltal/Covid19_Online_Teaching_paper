@@ -1,15 +1,15 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
-[1] Config.pm:314> INFO - Logfile is 'Paper_online_Learning.blg'
-[114] biber-darwin:340> INFO - === Sun Dec 26, 2021, 16:34:53
-[158] Biber.pm:415> INFO - Reading 'Paper_online_Learning.bcf'
-[313] Biber.pm:952> INFO - Found 33 citekeys in bib section 0
-[335] Biber.pm:4340> INFO - Processing section 0
-[353] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
-[357] bibtex.pm:1689> INFO - LaTeX decoding ...
-[423] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
-[807] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[808] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[808] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[808] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[875] bbl.pm:654> INFO - Writing 'Paper_online_Learning.bbl' with encoding 'UTF-8'
-[904] bbl.pm:757> INFO - Output to Paper_online_Learning.bbl
+[0] Config.pm:314> INFO - Logfile is 'Paper_online_Learning.blg'
+[103] biber-darwin:340> INFO - === Sun Dec 26, 2021, 21:08:48
+[143] Biber.pm:415> INFO - Reading 'Paper_online_Learning.bcf'
+[297] Biber.pm:952> INFO - Found 33 citekeys in bib section 0
+[315] Biber.pm:4340> INFO - Processing section 0
+[336] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
+[340] bibtex.pm:1689> INFO - LaTeX decoding ...
+[407] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
+[779] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[779] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[779] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[780] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[833] bbl.pm:654> INFO - Writing 'Paper_online_Learning.bbl' with encoding 'UTF-8'
+[859] bbl.pm:757> INFO - Output to Paper_online_Learning.bbl

@@ -12,14 +12,12 @@ library(countrycode)
 library(coronavirus)
 library(patchwork)
 #set the time window
-# Consider 2020 
 time <- ("2019-12-01 2021-08-15")
 
 ## ---- covidImpactWorld
 ## COVID-19 Impact on Education (global data)
 ## Data source: https://en.unesco.org/covid19/educationresponse
 ## Data download: 16-08-2021
-## Write (download from the above link)
 world_impact <- read.csv(
   here::here("data", "covid_impact_education_full.csv"))
 wimpact <- world_impact %>%
@@ -34,7 +32,6 @@ wimpact <- wimpact %>% select(-ISO) %>%
 p <- wimpact %>% autoplot(Count) +
   geom_line(size=1) +
   xlab ("Time") +
-  # viridis::scale_colour_viridis(discrete = TRUE)+
   scale_color_brewer(palette="Dark2")+
   ylab("Number of Countries")+
   theme_bw() + 
@@ -87,7 +84,6 @@ p <- wimpact %>%
   facet_grid(vars(Continent), scales = "free_y") +   # only assigns the row variable
   xlab("Time)") +
   scale_color_brewer(palette="Dark2")+
-  #viridis::scale_colour_viridis(discrete = TRUE, begin = 0, end = 1)+
   theme_bw() + 
   theme( text = element_text(size = 14), legend.position = "bottom")+
   guides(colour = guide_legend(nrow = 2))+
@@ -128,18 +124,6 @@ write.csv(trends, here::here( "data",
   "covid_search_world.csv"))
 
 
-## ---- covid19_vaccine_trend_world
-## Offline data retrieval
-keywords= c("COVID-19 vaccine", "covid vaccine")
-#set channels 
-channel <- 'web'
-trends <-  gtrends(keywords, gprop =channel,
-                   time = "2017-12-01 2021-08-15" )
-trends <- trends$interest_over_time
-write.csv(trends, here::here("data",
-  "covid_vaccine_search_world.csv"))
-
-
 ## ---- covid_epidemic_datasave
 # Data retrieved from coronavirus R package on 19-01-2021
 library(coronavirus)
@@ -156,6 +140,21 @@ covid_cases <- coronavirus %>%
 covid_cases <- covid_cases %>% as_tsibble(index = date)
 write.csv(covid_cases, here::here(
   "data", "covid_cases.csv"))
+
+
+
+## ---- covid19_vaccine_trend_world
+## Offline data retrieval
+keywords= c("COVID-19 vaccine", "covid vaccine")
+#set channels 
+channel <- 'web'
+trends <-  gtrends(keywords, gprop =channel,
+                   time = "2017-12-01 2021-08-15" )
+trends <- trends$interest_over_time
+write.csv(trends, here::here("data",
+                             "covid_vaccine_search_world.csv"))
+
+
 
 ## ---- vaccine_datasave
 # Data retrieved from coronavirus R package on 19-01-2021
@@ -179,7 +178,6 @@ covid_vaccine <- covid19_vaccine %>%
 covid_vaccine <- covid_vaccine %>% as_tsibble(index = date)
 write.csv(covid_vaccine, here::here(
   "data", "covid_vaccine.csv"))
-
 
 
 ## ---- distanceLearningWorldAnalysis
@@ -368,6 +366,7 @@ align1 <- dtw(xyz[,1], xyz[,2], keep = T)
 align2 <- dtw(xyz[,1], xyz[,3], keep = T)
 
 
+
 ## ---- dtw1
 # par(mfrow=c(2,2), mar=c(0,1,0.75,0))
 p1 <- dtwPlotTwoWay(align1,
@@ -380,6 +379,7 @@ p2 <- dtwPlotDensity(align1, normalize = TRUE, main = "(b) Cumulative cost densi
 p3 <- dtwPlotTwoWay(align2, main = "(a) Pointwise comparison between 'Online Learning' and 'covid'")
 p4 <-dtwPlotDensity(align2, normalize = TRUE, main = "(b) Cumulative cost density 
                     with the warping path between 'Online Learning' and 'covid'")
+
 
 
 ## ---- ccfAnalysis
@@ -493,111 +493,11 @@ pe <- data %>%
   (p5 | pe )
 
 
-
-
-
-
-## ---- download_education_data
-
-#Google Trends categories.
-# set category- use 'data(categories)' to retreive valid codes. 74- Education
-category <- categories[
-  categories$name=="Education",2] %>%
-  as.numeric()
-#set channels 
-channel <- 'web'
-edu_world <- gtrends( gprop =channel,
-                      time = time ,
-                      category = category)
-write.csv(edu_world$interest_over_time, 
-          here::here("data", 
-                     "trends_edu_world.csv"))
-write.csv(edu_world$related_topics,
-          here::here("data", 
-                     "related_topics_edu_world.csv"))
-write.csv(edu_world$related_queries, 
-          here::here( "data",
-                     "related_queries_edu_world.csv"))
-
-
-
-# set category- use 'data(categories)' to retreive valid codes. 74- Education
-category <- categories[
-  categories$name=="Distance Learning",2] %>% 
-  as.numeric()
-#set channels 
-channel <- 'web'
-dist_edu_world <- gtrends( gprop =channel, 
-                           time = time ,
-                           category = category)
-write.csv(dist_edu_world$interest_over_time,
-          here::here("data",
-                     "trends_dist_edu_world.csv"))
-write.csv(dist_edu_world$related_topics,
-          here::here("data", 
-                     "related_topics_dist_edu_world.csv"))
-write.csv(dist_edu_world$related_queries, 
-          here::here("data", 
-                     "related_queries_dist_edu_world.csv"))
-
-
-
-# set category- use 'data(categories)' to retreive valid codes. 74- Education
-category <- categories[
-  categories$name=="Education",2] %>%
-  as.numeric()
-#set the geographic area: DE = Germany
-# use this to find country code https://en.wikipedia.org/wiki/ISO_3166-2
-country <- c('LK') 
-#set channels 
-channel <- 'web'
-edu_SL <- gtrends( gprop =channel, 
-                   geo=country, time = time ,
-                   category = category)
-write.csv(edu_SL$interest_over_time, 
-          here::here("data", "trends_edu_SL.csv"))
-write.csv(edu_SL$related_topics, 
-          here::here("data", 
-                     "related_topics_edu_SL.csv"))
-write.csv(edu_SL$related_queries, 
-          here::here("data", 
-                     "related_queries_edu_SL.csv"))
-
-
-
-# set category- use 'data(categories)' to retreive valid codes. 74- Education
-category <- categories[
-  categories$name=="Distance Learning",2] %>%
-  as.numeric()
-#set the geographic area: DE = Germany
-# use this to find country code https://en.wikipedia.org/wiki/ISO_3166-2
-country <- c('LK') 
-#set channels 
-channel <- 'web'
-dist_edu_SL<- gtrends( gprop =channel, 
-                       geo=country, 
-                       time = time , 
-                       category = category)
-write.csv(dist_edu_SL$interest_over_time, 
-          here::here("data", 
-                     "trends_dist_edu_SL.csv"))
-write.csv(dist_edu_SL$related_topics,
-          here::here("data", 
-                     "related_topics_dist_edu_SL.csv"))
-write.csv(dist_edu_SL$related_queries,
-          here::here("data", 
-                     "related_queries_dist_edu_SL.csv"))
-
-
-
-
-
 ## ---- Digital_lms_data_download
 
 keywords= c("CenturyTech", "ClassDojo", "Edmodo", "Edraak",
             "EkStep", "Google Classroom", "Moodle", "Nafham",
             "Paper Airplanes", "Schoology", "Seesaw", "Skooler")
-#data_world <- purrr::map_df(keywords, get_info_world)
 
 # Google Classroom is the maximum category by 15-08-2021
 keywords1 <- c("Google Classroom",
@@ -632,11 +532,9 @@ write.csv(data_world,
 
 ## ---- DigitalLmsAnalysis
 fontsize = 12
-
 keywords= c("CenturyTech", "ClassDojo", "Edmodo", "Edraak",
             "EkStep", "Google Classroom", "Moodle", "Nafham",
             "Paper Airplanes", "Schoology", "Seesaw", "Skooler")
-#data_world <- purrr::map_df(keywords, get_info_world)
 
 data_world <- read.csv( here::here("data", "Digital_lms_world.csv"))
 
@@ -681,7 +579,7 @@ trends2 <-  gtrends(keywords2, gprop =channel,
 trends2 <- trends2$interest_over_time
 trends21 <-trends2 %>%  filter(keyword != "Ubongo")
 data_world <- bind_rows(trends1, trends21)
-#data_world <- purrr::map_df(keywords, get_info_world)
+
 write.csv(data_world, 
           here::here("data", 
                      "mobile_phones_apps_world.csv"))
@@ -709,12 +607,13 @@ p2<- dataW %>% as_tibble() %>%
   distinct(date, keyword, .keep_all = TRUE) %>%
   as_tsibble(index= date, key = keyword) %>%
   autoplot(hits, size= 1) +
-  theme(legend.position = "bottom",  text = element_text(size = fontsize), legend.title = element_blank(), legend.text = element_text(size = fontsize))+
-  #scale_colour_viridis_d(guide = "colourbar", direction = -1) + 
+  theme(legend.position = "bottom", 
+        text = element_text(size = fontsize),
+        legend.title = element_blank(),
+        legend.text = element_text(size = fontsize))+
   scale_colour_discrete(guide = "colourbar") + 
   labs(subtitle ="(b) Systems built for use on basic mobile phones
 ")
-
 
 
 ## ---- offline_functionality_data_download
@@ -727,6 +626,8 @@ data_world <- trends
 write.csv(data_world,
           here::here("data", 
                      "offline_functionality_world.csv"))
+
+
 
 ## ---- offline_functionality_analysis
 keywords <-  c("Kolibri", "Rumie", "Ustad Mobile")
@@ -749,10 +650,15 @@ p3<- dataW %>% as_tibble() %>%
   distinct(date, keyword, .keep_all = TRUE) %>%
   as_tsibble(index= date, key = keyword) %>% 
   autoplot(hits, size= 1) +
-  theme(legend.position = "bottom",  text = element_text(size = fontsize), legend.title = element_blank(), legend.text = element_text(size = fontsize))+
+  theme(legend.position = "bottom", 
+        text = element_text(size = fontsize),
+        legend.title = element_blank(), 
+        legend.text = element_text(size = fontsize))+
  # scale_colour_viridis_d(guide = "colourbar", direction = -1) + 
   scale_colour_discrete(guide = "colourbar") + 
   labs(subtitle ="(c) Systems with strong offline functionality")
+
+
 
 ## ---- mooc_data_download
 keywords= c("Alison", "Canvas", "Coursera", "European Schoolnet Academy", 
@@ -963,7 +869,6 @@ write.csv(data_world, here::here( "data", "Collaboration_platforms_world.csv"))
 ### This analysis was restricted to education catgory:
 #Otherwise hits generates and error
 
-
 category <- categories[categories$name=="Education",2] %>% as.numeric()
 keywords= c("Zoom", "Dingtalk", "Lark", "Hangouts Meet",
             "Teams", "Skype", "WhatsApp")
@@ -1082,6 +987,7 @@ trends31$hits <- as.numeric( trends31$hits)
 data_world <- bind_rows(trends1, trends21, trends31)
 write.csv(data_world, here::here("data", "External_repositories_DL_world.csv"))
 
+
 ## ---- External_repositories_DL_analysis
 keywords= c("Brookings", "Common Sense Education", "Commonweatlh of Learning",
             "Education Nation", "EdSurge", "Global Business Coalition for Education",
@@ -1110,6 +1016,7 @@ p9 <-  dataW %>% as_tibble() %>%
  # scale_colour_viridis_d(guide = "colourbar", direction = -1) + 
   scale_colour_discrete(guide = "colourbar") + 
   labs(subtitle ="(i) External repositories of distance learning solutions")
+
 
 ## ---- Online_proctoring_data_download
 # source : https://www.softwaresuggest.com/blog/best-online-exam-proctoring-software/#7_ExamSoft
@@ -1145,7 +1052,6 @@ trends31$hits <- as.numeric( trends31$hits)
 trends41$hits <- as.numeric( trends41$hits)
 data_world <- bind_rows(trends1, trends21, trends31, trends41)
 write.csv(data_world, here::here("Paper_online_Learning_Dec", "data", "Online_proctoring_world.csv"))
-
 
 
 
