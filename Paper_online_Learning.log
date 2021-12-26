@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.12.16)  26 DEC 2021 21:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.12.16)  26 DEC 2021 21:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1032,28 +1032,28 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
 
 [10]
-<figure/dtw1-1.png, id=203, 578.16pt x 289.08pt>
+<figure/dtw1-1.png, id=202, 578.16pt x 289.08pt>
 File: figure/dtw1-1.png Graphic file (type png)
 <use figure/dtw1-1.png>
-Package pdftex.def Info: figure/dtw1-1.png  used on input line 369.
+Package pdftex.def Info: figure/dtw1-1.png  used on input line 368.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
-<figure/dtw1-2.png, id=204, 578.16pt x 289.08pt>
+<figure/dtw1-2.png, id=203, 578.16pt x 289.08pt>
 File: figure/dtw1-2.png Graphic file (type png)
 <use figure/dtw1-2.png>
-Package pdftex.def Info: figure/dtw1-2.png  used on input line 369.
+Package pdftex.def Info: figure/dtw1-2.png  used on input line 368.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figure/dtw2-1.png, id=205, 578.16pt x 289.08pt>
+<figure/dtw2-1.png, id=204, 578.16pt x 289.08pt>
 File: figure/dtw2-1.png Graphic file (type png)
 <use figure/dtw2-1.png>
-Package pdftex.def Info: figure/dtw2-1.png  used on input line 378.
+Package pdftex.def Info: figure/dtw2-1.png  used on input line 377.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
-<figure/dtw2-2.png, id=206, 578.16pt x 289.08pt>
+<figure/dtw2-2.png, id=205, 578.16pt x 289.08pt>
 File: figure/dtw2-2.png Graphic file (type png)
 <use figure/dtw2-2.png>
-Package pdftex.def Info: figure/dtw2-2.png  used on input line 378.
+Package pdftex.def Info: figure/dtw2-2.png  used on input line 377.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1082,10 +1082,10 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
 
 [13 <./figure/dtw2-1.png> <./figure/dtw2-2.png>]
-<figure/ccfAnalysis-1.png, id=242, 578.16pt x 505.89pt>
+<figure/ccfAnalysis-1.png, id=241, 578.16pt x 505.89pt>
 File: figure/ccfAnalysis-1.png Graphic file (type png)
 <use figure/ccfAnalysis-1.png>
-Package pdftex.def Info: figure/ccfAnalysis-1.png  used on input line 398.
+Package pdftex.def Info: figure/ccfAnalysis-1.png  used on input line 397.
 (pdftex.def)             Requested size: 455.24411pt x 398.33644pt.
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1106,30 +1106,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 <figure/plot1-1.png, id=280, 578.16pt x 867.24pt>
 File: figure/plot1-1.png Graphic file (type png)
 <use figure/plot1-1.png>
-Package pdftex.def Info: figure/plot1-1.png  used on input line 416.
+Package pdftex.def Info: figure/plot1-1.png  used on input line 415.
 (pdftex.def)             Requested size: 455.24411pt x 682.8625pt.
 
-LaTeX Warning: Float too large for page by 3.67941pt on input line 421.
+LaTeX Warning: Float too large for page by 3.67941pt on input line 420.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figure/plot2-1.png, id=281, 578.16pt x 867.24pt>
-File: figure/plot2-1.png Graphic file (type png)
-<use figure/plot2-1.png>
-Package pdftex.def Info: figure/plot2-1.png  used on input line 425.
-(pdftex.def)             Requested size: 455.24411pt x 682.8625pt.
-
-LaTeX Warning: Float too large for page by 3.67941pt on input line 430.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figure/psychosocialSupportAnalysis-1.png, id=282, 578.16pt x 216.81pt>
-File: figure/psychosocialSupportAnalysis-1.png Graphic file (type png)
-<use figure/psychosocialSupportAnalysis-1.png>
-Package pdftex.def Info: figure/psychosocialSupportAnalysis-1.png  used on input line 436.
-(pdftex.def)             Requested size: 455.24411pt x 170.7156pt.
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 25.21904pt, for example:
@@ -1141,8 +1122,27 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+<figure/plot2-1.png, id=285, 578.16pt x 867.24pt>
+File: figure/plot2-1.png Graphic file (type png)
+<use figure/plot2-1.png>
+Package pdftex.def Info: figure/plot2-1.png  used on input line 424.
+(pdftex.def)             Requested size: 455.24411pt x 682.8625pt.
 
-LaTeX Warning: Reference `fig: psychosocialSupportAnalysis' on page 17 undefined on input line 443.
+LaTeX Warning: Float too large for page by 3.67941pt on input line 429.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figure/psychosocialSupportAnalysis-1.png, id=286, 578.16pt x 216.81pt>
+File: figure/psychosocialSupportAnalysis-1.png Graphic file (type png)
+<use figure/psychosocialSupportAnalysis-1.png>
+Package pdftex.def Info: figure/psychosocialSupportAnalysis-1.png  used on input line 435.
+(pdftex.def)             Requested size: 455.24411pt x 170.7156pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig: psychosocialSupportAnalysis' on page 17 undefined on input line 442.
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1169,6 +1169,14 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [19]
 
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 25.21904pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.21904pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
+
+[20]
+
 Package caption Warning: Unused \captionsetup[table] on input line 62.
 See the caption package documentation for explanation.
 
@@ -1179,7 +1187,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
 
-[20]
+[21]
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 25.21904pt, for example:
@@ -1187,7 +1195,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
 
-[21 <./figure/plot1-1.png>]
+[22 <./figure/plot1-1.png>]
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 25.21904pt, for example:
@@ -1195,7 +1203,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
 
-[22 <./figure/plot2-1.png>]
+[23 <./figure/plot2-1.png>]
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 25.21904pt, for example:
@@ -1203,7 +1211,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
 
-[23 <./figure/psychosocialSupportAnalysis-1.png>] (./Paper_online_Learning.aux)
+[24 <./figure/psychosocialSupportAnalysis-1.png>] (./Paper_online_Learning.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1218,18 +1226,18 @@ Package logreq Info: Writing requests to 'Paper_online_Learning.run.xml'.
 ### semi simple group (level 1) entered at line 166 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 23670 strings out of 480313
- 420802 string characters out of 5895694
- 1151114 words of memory out of 5000000
+ 23671 strings out of 480313
+ 420810 string characters out of 5895694
+ 1151115 words of memory out of 5000000
  40809 multiletter control sequences out of 15000+600000
  500351 words of font info for 303 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,12n,63p,3332b,5592s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/bera/fvsb8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/bera/fvsr8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Paper_online_Learning.pdf (24 pages, 784619 bytes).
+Output written on Paper_online_Learning.pdf (25 pages, 784930 bytes).
 PDF statistics:
- 384 PDF objects out of 1000 (max. 8388607)
- 320 compressed objects within 4 object streams
- 79 named destinations out of 1000 (max. 500000)
+ 389 PDF objects out of 1000 (max. 8388607)
+ 324 compressed objects within 4 object streams
+ 80 named destinations out of 1000 (max. 500000)
  79984 words of extra memory for PDF output out of 89155 (max. 10000000)
 
