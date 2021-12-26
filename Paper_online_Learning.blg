@@ -1,15 +1,15 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'Paper_online_Learning.blg'
-[106] biber-darwin:340> INFO - === Sun Dec 26, 2021, 22:26:39
-[149] Biber.pm:415> INFO - Reading 'Paper_online_Learning.bcf'
-[280] Biber.pm:952> INFO - Found 34 citekeys in bib section 0
-[300] Biber.pm:4340> INFO - Processing section 0
-[313] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
-[316] bibtex.pm:1689> INFO - LaTeX decoding ...
-[385] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
-[758] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[758] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[758] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[758] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[816] bbl.pm:654> INFO - Writing 'Paper_online_Learning.bbl' with encoding 'UTF-8'
-[842] bbl.pm:757> INFO - Output to Paper_online_Learning.bbl
+[104] biber-darwin:340> INFO - === Sun Dec 26, 2021, 22:35:49
+[122] Biber.pm:415> INFO - Reading 'Paper_online_Learning.bcf'
+[262] Biber.pm:952> INFO - Found 34 citekeys in bib section 0
+[280] Biber.pm:4340> INFO - Processing section 0
+[293] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
+[296] bibtex.pm:1689> INFO - LaTeX decoding ...
+[366] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
+[744] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[744] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[744] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[745] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[803] bbl.pm:654> INFO - Writing 'Paper_online_Learning.bbl' with encoding 'UTF-8'
+[832] bbl.pm:757> INFO - Output to Paper_online_Learning.bbl

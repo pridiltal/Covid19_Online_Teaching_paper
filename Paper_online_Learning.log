@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.12.16)  26 DEC 2021 22:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.12.16)  26 DEC 2021 22:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -938,13 +938,15 @@ LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
 (Font)              scaled to size 9.85492pt on input line 274.
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
 (Font)              scaled to size 13.49991pt on input line 282.
-[2]
-<figure/covidImpactWorld-1.png, id=54, 578.16pt x 289.08pt>
+<figure/covidImpactWorld-1.png, id=46, 578.16pt x 289.08pt>
 File: figure/covidImpactWorld-1.png Graphic file (type png)
 <use figure/covidImpactWorld-1.png>
 Package pdftex.def Info: figure/covidImpactWorld-1.png  used on input line 288.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
-<figure/covidImpactContinent-1.png, id=56, 578.16pt x 433.62pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figure/covidImpactContinent-1.png, id=48, 578.16pt x 433.62pt>
 File: figure/covidImpactContinent-1.png Graphic file (type png)
 <use figure/covidImpactContinent-1.png>
 Package pdftex.def Info: figure/covidImpactContinent-1.png  used on input line 297.
@@ -952,7 +954,8 @@ Package pdftex.def Info: figure/covidImpactContinent-1.png  used on input line 2
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figure/distanceLearningWorldAnalysis-1.png, id=61, 578.16pt x 578.16pt>
+[2]
+<figure/distanceLearningWorldAnalysis-1.png, id=62, 578.16pt x 578.16pt>
 File: figure/distanceLearningWorldAnalysis-1.png Graphic file (type png)
 <use figure/distanceLearningWorldAnalysis-1.png>
 Package pdftex.def Info: figure/distanceLearningWorldAnalysis-1.png  used on input line 308.
@@ -960,78 +963,16 @@ Package pdftex.def Info: figure/distanceLearningWorldAnalysis-1.png  used on inp
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
-(Font)              scaled to size 12.9599pt on input line 318.
-[3 <./figure/covidImpactWorld-1.png>]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[4 <./figure/covidImpactContinent-1.png>]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[5 <./figure/distanceLearningWorldAnalysis-1.png>]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[6]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[7]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[8]
+(Font)              scaled to size 12.9599pt on input line 319.
+[3 <./figure/covidImpactWorld-1.png>] [4 <./figure/covidImpactContinent-1.png>] [5 <./figure/distanceLearningWorldAnalysis-1.png>] [6] [7] [8]
 LaTeX Font Info:    Trying to load font information for T1+fvm on input line 346.
 (/Users/priyangatalagala/Library/TinyTeX/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 9.85492pt on input line 346.
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[9]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[10]
+[9] [10]
 <figure/dtw1-1.png, id=205, 578.16pt x 289.08pt>
 File: figure/dtw1-1.png Graphic file (type png)
 <use figure/dtw1-1.png>
@@ -1058,30 +999,7 @@ Package pdftex.def Info: figure/dtw2-2.png  used on input line 379.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[11]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[12 <./figure/dtw1-1.png> <./figure/dtw1-2.png>]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[13 <./figure/dtw2-1.png> <./figure/dtw2-2.png>]
+[11] [12 <./figure/dtw1-1.png> <./figure/dtw1-2.png>] [13 <./figure/dtw2-1.png> <./figure/dtw2-2.png>]
 <figure/ccfAnalysis-1.png, id=247, 578.16pt x 505.89pt>
 File: figure/ccfAnalysis-1.png Graphic file (type png)
 <use figure/ccfAnalysis-1.png>
@@ -1090,30 +1008,7 @@ Package pdftex.def Info: figure/ccfAnalysis-1.png  used on input line 399.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[14]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[15 <./figure/ccfAnalysis-1.png>]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[16]
+[14] [15 <./figure/ccfAnalysis-1.png>] [16]
 <figure/plot1-1.png, id=290, 578.16pt x 867.24pt>
 File: figure/plot1-1.png Graphic file (type png)
 <use figure/plot1-1.png>
@@ -1144,74 +1039,12 @@ Package pdftex.def Info: figure/psychosocialSupport-1.png  used on input line 43
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[17]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[18]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[19]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[20]
+[17] [18] [19] [20]
 
 Package caption Warning: Unused \captionsetup[table] on input line 62.
 See the caption package documentation for explanation.
 
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[21]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[22 <./figure/plot1-1.png>]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[23 <./figure/plot2-1.png>]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 25.21904pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.21904pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-10.21904pt}.
-
-[24 <./figure/psychosocialSupport-1.png>] (./Paper_online_Learning.aux)
+[21] [22 <./figure/plot1-1.png>] [23 <./figure/plot2-1.png>] [24 <./figure/psychosocialSupport-1.png>] (./Paper_online_Learning.aux)
 Package rerunfilecheck Info: File `Paper_online_Learning.out' has not changed.
 (rerunfilecheck)             Checksum: C242C783307ADD8023832E6002CD5162;977.
 Package logreq Info: Writing requests to 'Paper_online_Learning.run.xml'.
@@ -1223,15 +1056,15 @@ Package logreq Info: Writing requests to 'Paper_online_Learning.run.xml'.
 ### semi simple group (level 1) entered at line 166 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 23670 strings out of 480313
- 420780 string characters out of 5895694
- 1151296 words of memory out of 5000000
+ 23673 strings out of 480313
+ 420804 string characters out of 5895694
+ 1150991 words of memory out of 5000000
  40813 multiletter control sequences out of 15000+600000
- 500033 words of font info for 299 fonts, out of 8000000 for 9000
+ 500312 words of font info for 301 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,12n,63p,3354b,5591s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/bera/fvsb8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/bera/fvsr8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Paper_online_Learning.pdf (25 pages, 791709 bytes).
+Output written on Paper_online_Learning.pdf (25 pages, 789729 bytes).
 PDF statistics:
  396 PDF objects out of 1000 (max. 8388607)
  331 compressed objects within 4 object streams
