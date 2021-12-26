@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.12.16)  26 DEC 2021 22:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.12.16)  26 DEC 2021 23:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1056,15 +1056,15 @@ Package logreq Info: Writing requests to 'Paper_online_Learning.run.xml'.
 ### semi simple group (level 1) entered at line 166 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 23673 strings out of 480313
- 420804 string characters out of 5895694
- 1150991 words of memory out of 5000000
+ 23674 strings out of 480313
+ 420813 string characters out of 5895694
+ 1150992 words of memory out of 5000000
  40813 multiletter control sequences out of 15000+600000
- 500312 words of font info for 301 fonts, out of 8000000 for 9000
+ 500321 words of font info for 302 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,12n,63p,3354b,5591s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/bera/fvsb8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/bera/fvsr8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></Users/priyangatalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Paper_online_Learning.pdf (25 pages, 789729 bytes).
+Output written on Paper_online_Learning.pdf (25 pages, 789767 bytes).
 PDF statistics:
  396 PDF objects out of 1000 (max. 8388607)
  331 compressed objects within 4 object streams
