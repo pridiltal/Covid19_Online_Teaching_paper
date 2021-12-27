@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.7.24)  27 DEC 2021 18:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.7.24)  27 DEC 2021 19:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1208,37 +1208,37 @@ LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
 [3 <./figure/covidImpactWorld-1.png>] [4 <./figure/covidImpactContinent-1.png>]
 [5 <./figure/distanceLearningWorldAnalysis-1.png>] [6] [7] [8]
 LaTeX Font Info:    Trying to load font information for T1+fvm on input line 34
-6.
+8.
 
 (/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/bera/t1fvm
 .fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 346.
+(Font)              scaled to size 9.85492pt on input line 348.
 [9] [10]
-<figure/dtw1-1.png, id=205, 578.16pt x 289.08pt>
+<figure/dtw1-1.png, id=204, 578.16pt x 289.08pt>
 File: figure/dtw1-1.png Graphic file (type png)
 <use figure/dtw1-1.png>
-Package pdftex.def Info: figure/dtw1-1.png  used on input line 370.
+Package pdftex.def Info: figure/dtw1-1.png  used on input line 372.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
-<figure/dtw1-2.png, id=206, 578.16pt x 289.08pt>
+<figure/dtw1-2.png, id=205, 578.16pt x 289.08pt>
 File: figure/dtw1-2.png Graphic file (type png)
 <use figure/dtw1-2.png>
-Package pdftex.def Info: figure/dtw1-2.png  used on input line 370.
+Package pdftex.def Info: figure/dtw1-2.png  used on input line 372.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figure/dtw2-1.png, id=207, 578.16pt x 289.08pt>
+<figure/dtw2-1.png, id=206, 578.16pt x 289.08pt>
 File: figure/dtw2-1.png Graphic file (type png)
 <use figure/dtw2-1.png>
-Package pdftex.def Info: figure/dtw2-1.png  used on input line 379.
+Package pdftex.def Info: figure/dtw2-1.png  used on input line 381.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
-<figure/dtw2-2.png, id=208, 578.16pt x 289.08pt>
+<figure/dtw2-2.png, id=207, 578.16pt x 289.08pt>
 File: figure/dtw2-2.png Graphic file (type png)
 <use figure/dtw2-2.png>
-Package pdftex.def Info: figure/dtw2-2.png  used on input line 379.
+Package pdftex.def Info: figure/dtw2-2.png  used on input line 381.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1248,7 +1248,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <figure/ccfAnalysis-1.png, id=247, 578.16pt x 505.89pt>
 File: figure/ccfAnalysis-1.png Graphic file (type png)
 <use figure/ccfAnalysis-1.png>
-Package pdftex.def Info: figure/ccfAnalysis-1.png  used on input line 399.
+Package pdftex.def Info: figure/ccfAnalysis-1.png  used on input line 401.
 (pdftex.def)             Requested size: 455.24411pt x 398.33644pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1257,10 +1257,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <figure/plot1-1.png, id=290, 578.16pt x 867.24pt>
 File: figure/plot1-1.png Graphic file (type png)
 <use figure/plot1-1.png>
-Package pdftex.def Info: figure/plot1-1.png  used on input line 417.
+Package pdftex.def Info: figure/plot1-1.png  used on input line 419.
 (pdftex.def)             Requested size: 455.24411pt x 682.8625pt.
 
-LaTeX Warning: Float too large for page by 3.67941pt on input line 422.
+LaTeX Warning: Float too large for page by 3.67941pt on input line 424.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1268,10 +1268,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <figure/plot2-1.png, id=291, 578.16pt x 867.24pt>
 File: figure/plot2-1.png Graphic file (type png)
 <use figure/plot2-1.png>
-Package pdftex.def Info: figure/plot2-1.png  used on input line 426.
+Package pdftex.def Info: figure/plot2-1.png  used on input line 428.
 (pdftex.def)             Requested size: 455.24411pt x 682.8625pt.
 
-LaTeX Warning: Float too large for page by 3.67941pt on input line 431.
+LaTeX Warning: Float too large for page by 3.67941pt on input line 433.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1280,7 +1280,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: figure/psychosocialSupport-1.png Graphic file (type png)
 <use figure/psychosocialSupport-1.png>
 Package pdftex.def Info: figure/psychosocialSupport-1.png  used on input line 4
-35.
+37.
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1305,7 +1305,7 @@ Package logreq Info: Writing requests to 'Paper_online_Learning.run.xml'.
 Here is how much of TeX's memory you used:
  22801 strings out of 480477
  392790 string characters out of 5896168
- 1150015 words of memory out of 5000000
+ 1150016 words of memory out of 5000000
  39761 multiletter control sequences out of 15000+600000
  500321 words of font info for 302 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1319,7 +1319,7 @@ iyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8
 a.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/ur
 w/palatino/uplr8a.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dis
 t/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Paper_online_Learning.pdf (25 pages, 789799 bytes).
+Output written on Paper_online_Learning.pdf (25 pages, 789803 bytes).
 PDF statistics:
  396 PDF objects out of 1000 (max. 8388607)
  331 compressed objects within 4 object streams
