@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.7.24)  27 DEC 2021 13:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.7.24)  27 DEC 2021 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1184,10 +1184,8 @@ File: figure/covidImpactWorld-1.png Graphic file (type png)
 Package pdftex.def Info: figure/covidImpactWorld-1.png  used on input line 288.
 
 (pdftex.def)             Requested size: 455.24411pt x 227.62082pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figure/covidImpactContinent-1.png, id=48, 578.16pt x 433.62pt>
+[2]
+<figure/covidImpactContinent-1.png, id=56, 578.16pt x 433.62pt>
 File: figure/covidImpactContinent-1.png Graphic file (type png)
 <use figure/covidImpactContinent-1.png>
 Package pdftex.def Info: figure/covidImpactContinent-1.png  used on input line 
@@ -1196,8 +1194,7 @@ Package pdftex.def Info: figure/covidImpactContinent-1.png  used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2]
-<figure/distanceLearningWorldAnalysis-1.png, id=62, 578.16pt x 578.16pt>
+<figure/distanceLearningWorldAnalysis-1.png, id=61, 578.16pt x 578.16pt>
 File: figure/distanceLearningWorldAnalysis-1.png Graphic file (type png)
 <use figure/distanceLearningWorldAnalysis-1.png>
 Package pdftex.def Info: figure/distanceLearningWorldAnalysis-1.png  used on in
@@ -1312,7 +1309,7 @@ Here is how much of TeX's memory you used:
  39761 multiletter control sequences out of 15000+600000
  500321 words of font info for 302 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,12n,67p,3354b,5415s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,11n,67p,3354b,5415s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/font
 s/enc/dvips/base/8r.enc}</Users/thiyangashaminitalagala/Library/TinyTeX/texmf-d
 ist/fonts/type1/public/bera/fvmr8a.pfb></Users/thiyangashaminitalagala/Library/
@@ -1322,7 +1319,7 @@ iyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplb8
 a.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/ur
 w/palatino/uplr8a.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dis
 t/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Paper_online_Learning.pdf (25 pages, 789639 bytes).
+Output written on Paper_online_Learning.pdf (25 pages, 789799 bytes).
 PDF statistics:
  396 PDF objects out of 1000 (max. 8388607)
  331 compressed objects within 4 object streams
