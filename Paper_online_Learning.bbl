@@ -1398,6 +1398,42 @@
       \field{volume}{12}
       \field{year}{2020}
     \endentry
+    \entry{zawacki2016mapping}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c23524c2c85c64ea58f95e884e6c760c}{%
+           family={Zawacki-Richter},
+           familyi={Z\bibinithyphendelim R\bibinitperiod},
+           given={Olaf},
+           giveni={O\bibinitperiod}}}%
+        {{hash=dbaa0a92913d5293646b92b68c035695}{%
+           family={Naidu},
+           familyi={N\bibinitperiod},
+           given={Som},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{711c8773ccf1c235ac7e766a347d3cb8}
+      \strng{fullhash}{711c8773ccf1c235ac7e766a347d3cb8}
+      \strng{bibnamehash}{711c8773ccf1c235ac7e766a347d3cb8}
+      \strng{authorbibnamehash}{711c8773ccf1c235ac7e766a347d3cb8}
+      \strng{authornamehash}{711c8773ccf1c235ac7e766a347d3cb8}
+      \strng{authorfullhash}{711c8773ccf1c235ac7e766a347d3cb8}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Distance Education}
+      \field{number}{3}
+      \field{title}{Mapping research trends from 35 years of publications in Distance Education}
+      \field{volume}{37}
+      \field{year}{2016}
+      \field{pages}{245\bibrangedash 269}
+      \range{pages}{25}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
