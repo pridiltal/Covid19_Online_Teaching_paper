@@ -108,7 +108,7 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Infectious diseases of poverty}
+      \field{journaltitle}{Infectious Diseases of Poverty}
       \field{number}{1}
       \field{title}{Assessing Ebola-related web search behaviour: insights and implications from an analytical study of Google Trends-based query volumes}
       \field{volume}{4}
@@ -251,7 +251,7 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Clinical infectious diseases}
+      \field{journaltitle}{Clinical Infectious Diseases}
       \field{number}{10}
       \field{title}{Google trends: a web-based tool for real-time surveillance of disease outbreaks}
       \field{volume}{49}
@@ -372,7 +372,7 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Australasian Marketing Journal (AMJ)}
+      \field{journaltitle}{Australasian Marketing Journal}
       \field{number}{2}
       \field{title}{Understanding new products’ market performance using Google Trends}
       \field{volume}{27}
@@ -479,7 +479,7 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of distance education}
+      \field{journaltitle}{Journal of Distance Education}
       \field{number}{1}
       \field{title}{Deep in the hearts of learners: Insights into the nature of online community}
       \field{volume}{17}
@@ -593,7 +593,7 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{The Lancet infectious diseases}
+      \field{journaltitle}{The Lancet Infectious Diseases}
       \field{title}{An interactive web-based dashboard to track COVID-19 in real time}
       \field{year}{2020}
     \endentry
@@ -705,7 +705,7 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of statistical Software}
+      \field{journaltitle}{Journal of Statistical Software}
       \field{title}{Computing and visualizing dynamic time warping alignments in R: the dtw package}
       \field{volume}{31}
       \field{year}{2009}
